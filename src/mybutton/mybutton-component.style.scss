@@ -1,0 +1,53 @@
+@import "../style/utils/vars";
+
+
+
+.myButton{
+  width: 55px;
+  height: 55px;
+  border-radius: 30px;
+  position: absolute;
+  // background-color: #355C7D;
+  color: white;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 0;
+  outline: none;
+  padding-bottom: 5px;
+  border-color: transparent;
+  cursor: pointer;
+
+  z-index: 100;
+  left: 0;
+  // transform-origin: 50% 50%;
+
+  transition: all $animation-time + .1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &.moveAnimation{
+    &-enter{
+      &-active{
+        left: 50%;
+        transform:
+                rotate(45deg)
+                // translate(-50%);
+        // animation: mymove $animation-time;
+      }
+      &-done{
+        left: calc(50% - 28px);
+        transform:
+                rotate(135deg)
+                // translate(-50%);
+      }
+    }
+
+    &-exit{
+      &-active{
+
+      }
+      &-done{
+
+      }
+    }
+  }
+}

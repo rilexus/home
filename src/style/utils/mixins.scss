@@ -1,0 +1,9 @@
+@mixin textBackgroundImage($url){
+  background-image: url($url);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

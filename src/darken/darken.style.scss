@@ -1,0 +1,46 @@
+
+.text{
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  transform: translate(0,-250%) scale(0.2);
+  opacity: .4;
+  transition: all 5000ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  &.interested{
+    &-enter{
+      &-active{
+        opacity: 1;
+        transform: translate(0, -250%) scale(100);
+      }
+      &-done{
+        opacity: 1;
+        transform: translate(0, -250%) scale(100);
+      }
+    }
+  }
+}
+
+.fade-bg{
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: all 2000ms cubic-bezier(0.6, 0.04, 0.98, 0.335);;
+  opacity: 0;
+  z-index: -100;
+  &.darken-animation{
+    &-enter{
+      &-active{
+        opacity: 1;
+        z-index: 100;
+      }
+      &-done{
+        opacity: 1;
+        z-index: 100;
+      }
+    }
+  }
+}

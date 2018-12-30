@@ -1,0 +1,36 @@
+@import "../style/utils/vars";
+
+.shadow-component{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  position: relative;
+  background-color: #355C7D;
+
+  transition: all $animation-time cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: scale(1,1);
+  // -webkit-transform:scale(1, 1);
+
+  &.expand-animation{
+    &-enter{
+      &-active{
+        transform: scale(55, 55) translate(33%, -20%);
+        background: linear-gradient(180deg, #355c7d 70%, rgba(255, 255, 255, 0) 88%);
+      }
+      &-done{
+        transform: scale(55, 55) translate(33%, -20%);
+        background: linear-gradient(180deg, #355c7d 70%, rgba(255, 255, 255, 0) 88%);
+      }
+    }
+
+    &-exit{
+      &-active{
+
+      }
+      &-done{
+
+      }
+    }
+  }
+
+}

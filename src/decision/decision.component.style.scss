@@ -1,0 +1,69 @@
+.decision-component{
+  $animation-time: 200ms;
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: all $animation-time;
+  transform: scale(0.90);
+
+  &.grow{
+    &-enter{
+      &-active{
+        opacity: 1;
+        transform: scale(1);
+      }
+      &-done{
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  .decision-wrapper{
+    margin: 50px;
+    &:hover{
+      .word{
+        text-decoration: underline;
+        color: black;
+      }
+    }
+
+  }
+  .option{
+    font-size: 4rem;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .word{
+    color: #dadada;
+  }
+  .yes{
+    animation-name: shake;
+    animation-iteration-count: infinite;
+    animation-duration: 1000ms;
+  }
+  .no{
+  }
+
+}
+
+@keyframes shake {
+  0%{
+    transform: rotate(0deg);
+  }
+  25%{
+    transform: rotate(15deg);
+  }
+  35%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(15deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+
+}

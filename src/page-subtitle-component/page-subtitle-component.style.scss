@@ -1,0 +1,63 @@
+@import "../style/utils/mixins";
+
+$animation-time: 1s;
+section.page-subtitle{
+  width: 80%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60vh;
+  transition: height $animation-time, transform $animation-time;
+
+  &.shrink{
+    height: 10vh;
+    transform: translate(0, -50%);
+    .section-title{
+      font-size: 3rem;
+      margin-top: 0;
+    }
+    .section-subtitle{
+      font-size: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: 90%;
+  }
+
+  @media only screen and (max-width: 980px) {
+    width: 100%;
+  }
+  .section-title{
+    font-weight: 900;
+    color: #dedede;
+    font-size: 11rem;
+    margin-top: 80px;
+    text-align: center;
+    transition: transform 400ms, font-size $animation-time, margin-top $animation-time;
+    transform: scaleY(0);
+
+    &.appear-grow{
+      &-enter{
+        &-active{
+          transform: scaleY(1);
+        }
+        &-done{
+          transform: scaleY(1);
+        }
+      }
+
+    }
+  }
+  .section-subtitle{
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    transition: font-size $animation-time;
+    color:  #cdcdcd;
+  }
+  #page-subtitle{
+    @include textBackgroundImage('')
+    //https://media3.giphy.com/media/3oFzlUASnAYgzmujja/giphy.gif?cid=3640f6095c28cf3a3677586351192a65
+  }
+}

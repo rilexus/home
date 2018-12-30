@@ -1,0 +1,24 @@
+.interested{
+  font-size: 3rem;
+  font-weight: 200;
+  color: #a7a7a7;
+  text-align: center;
+  transition: all .2s;
+  transform: translate(-10%,0);
+  opacity: 0;
+
+  &.interested-animation{
+    &-enter{
+      &-active{
+        transform: translate(0%,0);
+        opacity: 1;
+
+      }
+      &-done{
+        transform: translate(0%,0);
+        opacity: 1;
+      }
+    }
+  }
+
+}

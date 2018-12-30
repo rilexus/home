@@ -1,0 +1,19 @@
+.slide{
+  transform: scale(.9);
+  opacity: 0;
+  transition: all .4s;
+
+  &.slide-animation{
+    &-enter{
+      &-active{
+        opacity: 1;
+        transform: scale(1);
+      }
+      &-done{
+        opacity: 1;
+        transform: scale(1);
+
+      }
+    }
+  }
+}
