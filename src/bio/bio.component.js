@@ -138,13 +138,6 @@ export class BioComponent extends React.Component{
 							</div>
 						: null
 					}
-				<CSSTransition
-					in={this.state.sidebarEnter}
-					timeout={700}
-					classNames={'enter'}
-				>
-				<div className={'side-overlay'}/>
-				</CSSTransition>
 			</div>
 		);
 	}

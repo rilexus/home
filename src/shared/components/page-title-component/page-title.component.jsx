@@ -4,7 +4,7 @@ import './page-title-component.style.scss';
 
 
 
-const PageTitleComponent = (props) => {
+const PageTitleComponent = ({title, comment}) => {
 	return(
 		<CSSTransition
 			appear
@@ -16,11 +16,11 @@ const PageTitleComponent = (props) => {
 		>
 			<div className={'page-title-component'}>
 				{
-					props.title
+					title
 				}
 				<span>
 					{
-						props.comment
+						comment
 					}
 				</span>
 			</div>

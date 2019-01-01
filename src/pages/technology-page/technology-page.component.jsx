@@ -4,10 +4,10 @@ import './with3DEffect.scss';
 import './technology-page-component.style.scss';
 import './slide-animation.scss';
 
-import PageTitleComponent from "../page-title-component/page-title.component";
-import HeaderComponent from "../header-component/header.component";
-import UnfoldComponent from "../unfold-component/unfold.component";
-import PageSubtitleComponent from "../page-subtitle-component/page-subtitle.component";
+import PageTitleComponent from "../../shared/components/page-title-component/page-title.component";
+import HeaderComponent from "../../shared/components/page-header-component/header.component";
+import UnfoldComponent from "../../unfold-component/unfold.component";
+import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
 
 
 const stuff = [
@@ -125,7 +125,9 @@ export class TechnologyPageComponent extends React.Component{
 		openDescriptionName: 'React',
 		contentOpen: true,
 		indicatorPos: 30,
-		shrink: false
+		shrink: false,
+
+		showContent: false
 	};
 	
 	handleScroll(pos){
@@ -158,15 +160,33 @@ export class TechnologyPageComponent extends React.Component{
 			indicatorPos: pos
 		}))
 	}
+
+	showContent(){
+		setTimeout(()=>{
+            this.setState(s => ({...s, showContent: true}))
+		},200)
+	}
 	
 	
 	render(){
 		return(
-			<div className={'technology-page-component'} onScroll={(e)=> this.handleScroll(e.target.scrollTop)} style={{backgroundColor: this.state.bgColor}}>
+			<div className={'technology-page-component'}
+				 onScroll={(e)=> this.handleScroll(e.target.scrollTop)}
+				 style={{backgroundColor: this.state.bgColor}}>
+
+                <CSSTransition
+                    in
+					appear
+                    timeout={200}
+                    classNames={'enter'}
+                    onEntered={()=> this.showContent()}
+                >
+                    <div className={'side-overlay'}/>
+                </CSSTransition>
 				<HeaderComponent/>
 				
 				<CSSTransition
-					in
+					in={this.state.showContent}
 					appear
 					timeout={400}
 					classNames={'anim'}
@@ -178,11 +198,14 @@ export class TechnologyPageComponent extends React.Component{
 							subtitle={'TECH I LOVE'}
 							shrink={this.state.shrink}
 							comment={'TECH IM PASSIONATE ABOUT'}
-							url={'https://media3.giphy.com/media/3oFzlUASnAYgzmujja/giphy.gif?cid=3640f6095c28cf3a3677586351192a65'}
+							url={'https://media.giphy.com/media/l46C7yr4XM8YNWnEQ/giphy.gif'}
+							// url={'https://media3.giphy.com/media/3oFzlUASnAYgzmujja/giphy.gif?cid=3640f6095c28cf3a3677586351192a65'}
 						/>
 						
 						<section className={'tech'}>
-							<div className={'open-indicator'} style={{left: this.state.indicatorPos + 'px'}}/>
+							<div className={'open-indicator'}
+								 style={{left: this.state.indicatorPos + 'px'}}
+							/>
 							
 							<div className="tech-titles">
 								<UnfoldComponent

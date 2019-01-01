@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import './App.scss';
 import {Route, withRouter} from "react-router";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import uuid from 'uuid';
-import {GreetingComponent} from "./greeting/greeting.component";
-import InterestedComponent from "./interested/interested.component";
-import DecisionComponent from "./decision/decision.component";
-import DarkenComponent from "./darken/darken.component";
+import GreetingComponent from "./pages/greeting-page-component/greeting.component";
 import {BioComponent} from "./bio/bio.component";
 
 import {lurkerFace} from "./shared/utils";
-import {TechnologyPageComponent} from "./technology-page/technology-page.component";
+import {TechnologyPageComponent} from "./pages/technology-page/technology-page.component";
+import ContactPageComponent from "./pages/contact-page-component/contact-page.component";
 
 
 
@@ -28,40 +26,40 @@ class App extends Component {
 	  console.log("%cSTOP LURKING! NOTHING TO SEE HERE!", "color: red; font-size: x-large");
   }
 	
-	handleDecision(){
-  	this.setState(state => ({...state, showAwesome: true}));
-  	setTimeout(()=>{
-	    this.setState(state => ({
-		    ...state,
-		    showAwesome: false
-	    }));
-	    this.props.history.push('/bio');
-    }, 2200);
-  }
+  // handleDecision(){
+  // 	this.setState(state => ({...state, showAwesome: true}));
+  // 	setTimeout(()=>{
+	//     this.setState(state => ({
+	// 	    ...state,
+	// 	    showAwesome: false
+	//     }));
+	//     this.props.history.push('/bio');
+  //   }, 2200);
+  // }
+
   handleNextClick(){
-	  this.props.history.push('/bio/technology');
+	  this.props.history.push('/technology');
   }
   
   render() {
     return (
         <div className="App">
-	        <Route path={'/'} render={() => (
-		        <div>
-			        <div className={'greeting-wrapper'}>
-				        <GreetingComponent/>
-			        </div>
-			        <InterestedComponent/>
-			        <DecisionComponent onClick={()=>this.handleDecision()}/>
-		        </div>
+	        <Route path={'/'} exact render={() => (
+	        	<GreetingComponent/>
 	        )}/>
-	        <DarkenComponent show={this.state.showAwesome}/>
-	
+
 	        <Route exact path={'/bio'} render={() => (
 		        <BioComponent show={this.state.showBio} onNext={()=>this.handleNextClick()}/>
 	        )}/>
-	        <Route exact path={'/bio/technology'} render={() => (
+
+	        <Route exact path={'/technology'} render={() => (
 		        <TechnologyPageComponent/>
 	        )}/>
+
+            <Route exact path={'/contact'} render={() => (
+                <ContactPageComponent/>
+            )}/>
+
         </div>
     );
   }

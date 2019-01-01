@@ -16,9 +16,15 @@ header.header-component {
   .head-content-wrapper {
     width: 80%;
     display: flex;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     justify-content: space-between;
+
+    div.links{
+      display: flex;
+      align-items: center;
+    }
 
     .name-logo {
       font-size: 1rem;

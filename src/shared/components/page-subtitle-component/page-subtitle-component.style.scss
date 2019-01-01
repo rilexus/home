@@ -1,4 +1,4 @@
-@import "../style/utils/mixins";
+@import "../../../style/utils/mixins";
 
 $animation-time: 1s;
 section.page-subtitle{
@@ -21,13 +21,18 @@ section.page-subtitle{
     }
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (min-width: 1080px) {
     width: 90%;
   }
 
   @media only screen and (max-width: 980px) {
     width: 100%;
   }
+
+  @media only screen and (max-width: 980px) {
+    width: 100%;
+  }
+
   .section-title{
     font-weight: 900;
     color: #dedede;

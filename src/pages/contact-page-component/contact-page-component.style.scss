@@ -1,0 +1,43 @@
+.contact-page-component{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+
+  .scroll-wrapper{
+    height: 100%;
+    transform: scale(.7);
+    opacity: 0;
+    transition: opacity .2s, transform .2s;
+
+    &.contact-page-animation{
+      &-enter{
+        &-active{
+          opacity: 1;
+          transform: scale(1);
+        }
+        &-done{
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+
+    .contact{
+      font-size: 3rem;
+      text-align: center;
+      span.label{
+        font-weight: 200;
+        opacity: .3;
+      }
+      height: 500px;
+      padding-top: 150px;
+      font-weight: 600;
+      color: #232323;
+    }
+  }
+}
