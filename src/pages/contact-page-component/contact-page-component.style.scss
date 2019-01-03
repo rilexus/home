@@ -7,13 +7,14 @@
   background-color: white;
   overflow-y: scroll;
   overflow-x: hidden;
-
+  padding-right: 40px;
 
   .scroll-wrapper{
     height: 100%;
     transform: scale(.7);
     opacity: 0;
     transition: opacity .2s, transform .2s;
+
 
     &.contact-page-animation{
       &-enter{
@@ -35,8 +36,8 @@
         font-weight: 200;
         opacity: .3;
       }
-      height: 500px;
-      padding-top: 150px;
+      height: 60vh;
+      padding-top: 14rem;
       font-weight: 600;
       color: #232323;
     }

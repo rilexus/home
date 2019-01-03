@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.scss';
 import {Route, withRouter} from "react-router";
 import { CSSTransition } from 'react-transition-group';
-import uuid from 'uuid';
 import GreetingComponent from "./pages/greeting-page-component/greeting.component";
 import {BioComponent} from "./pages/bio/bio.component";
 

@@ -57,7 +57,7 @@ class GreetingComponent extends React.Component {
 	
 	render(){
 		return(
-			<div>
+			
 				<CSSTransition
 					classNames={'animation'}
 					timeout={200}
@@ -86,7 +86,7 @@ class GreetingComponent extends React.Component {
                         {/*<DarkenComponent show={this.state.showAwesome}/>*/}
 					</div>
 				</CSSTransition>
-			</div>
+			
 		)
 	}
 }

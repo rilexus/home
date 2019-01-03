@@ -1,6 +1,6 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import './with3DEffect.scss';
+import '../../3DEffect/with3DEffect.scss';
 import './technology-page-component.style.scss';
 import './slide-animation.scss';
 
@@ -8,6 +8,7 @@ import PageTitleComponent from "../../shared/components/page-title-component/pag
 import HeaderComponent from "../../shared/components/page-header-component/header.component";
 import UnfoldComponent from "../../unfold-component/unfold.component";
 import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
+import Wth3DEffect from "../../3DEffect/With3DEffect";
 
 
 const stuff = [
@@ -54,48 +55,6 @@ const stuff = [
 	},
 	
 ];
-
-
-class Wth3DEffect extends React.Component{
-	
-	state = {
-		hoveredTile: 0
-	};
-	
-	handleMouseEnter(tileNumber){
-		console.log('hovered:', tileNumber);
-		this.setState(s => ({
-			...s,
-			hoveredTile: tileNumber
-		}))
-	}
-	
-	render(){
-		return(
-			<div
-				className={['with3DEffect', `hovered_${this.state.hoveredTile}`].join(' ')}
-				onMouseLeave={() => this.setState(s => ({...s, hoveredTile: -1}))}
-			>
-				<div className={['tile t_1']} onMouseEnter={()=>this.handleMouseEnter(1)}/>
-				<div className={'tile t_2'} onMouseEnter={()=>this.handleMouseEnter(2)}/>
-				<div className={'tile t_3'} onMouseEnter={()=>this.handleMouseEnter(3)}/>
-				
-				<div className={'tile t_4'} onMouseEnter={()=>this.handleMouseEnter(4)}/>
-				<div className={'tile t_5'} onMouseEnter={()=>this.handleMouseEnter(5)}/>
-				<div className={'tile t_6'} onMouseEnter={()=>this.handleMouseEnter(6)}/>
-				
-				<div className={'tile t_7'} onMouseEnter={()=>this.handleMouseEnter(7)}/>
-				<div className={'tile t_8'} onMouseEnter={()=>this.handleMouseEnter(8)}/>
-				<div className={'tile t_9'} onMouseEnter={()=>this.handleMouseEnter(9)}/>
-				<div className={'with3D-component-wrapper'}>
-					{
-						this.props.children
-					}
-				</div>
-			</div>
-		);
-	}
-}
 
 const withAnimation = (_in, appear, component, key) => {
 	return(

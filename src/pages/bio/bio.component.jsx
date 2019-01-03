@@ -4,6 +4,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 
 export class BioComponent extends React.Component{
+	interval_1 = -1;
+	interval_2 = -1;
 	
 	state ={
 		numbers: ['', 'GET', 'READY', 'FOR' , 'MY' , 'BIO!'],
@@ -66,6 +68,15 @@ export class BioComponent extends React.Component{
 	componentDidMount() {
 		this.play();
 	}
+	componentWillUnmount() {
+		if(this.interval_2 !== -1){
+			clearInterval(this.interval_2);
+			console.log('hier');
+		}
+		if(this.interval_1 !== -1){
+			clearInterval(this.interval_1);
+		}
+	}
 	
 	play(){
 		if(this.state.index === this.state.bio.length){
@@ -76,27 +87,27 @@ export class BioComponent extends React.Component{
 			}))
 		}
 		setTimeout(()=>{
-			let interval =  setInterval(()=>{
+			this.interval_1 =  setInterval(()=>{
 				if(this.state.numberIndex < this.state.numbers.length){
 					this.setState(state => ({
 						...state,
 						numberIndex: state.numberIndex + 1
 					}))
 				} else {
-					clearInterval(interval)
+					clearInterval(this.interval_1)
 				}
 			}, 1000);
 		},1000);
 		
 		setTimeout(()=>{
-			let intervaL_2 = setInterval(()=>{
+			this.interval_2 = setInterval(()=>{
 				if(this.state.index < this.state.bio.length){
 					this.setState(state => ({
 						...state,
 						index: state.index + 1
 					}))
 				}else {
-					clearInterval(intervaL_2);
+					clearInterval(this.interval_2);
 				}
 			}, 200);
 			
