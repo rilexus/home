@@ -4,11 +4,12 @@ import {Route, withRouter} from "react-router";
 import { CSSTransition } from 'react-transition-group';
 import uuid from 'uuid';
 import GreetingComponent from "./pages/greeting-page-component/greeting.component";
-import {BioComponent} from "./bio/bio.component";
+import {BioComponent} from "./pages/bio/bio.component";
 
 import {lurkerFace} from "./shared/utils";
 import {TechnologyPageComponent} from "./pages/technology-page/technology-page.component";
 import ContactPageComponent from "./pages/contact-page-component/contact-page.component";
+import StartPageComponent from "./pages/start-page-component/start-page.component";
 
 
 
@@ -40,7 +41,8 @@ class App extends Component {
   handleNextClick(){
 	  this.props.history.push('/technology');
   }
-  
+
+
   render() {
     return (
         <div className="App">
@@ -58,6 +60,9 @@ class App extends Component {
 
             <Route exact path={'/contact'} render={() => (
                 <ContactPageComponent/>
+            )}/>
+            <Route exact path={'/start'} render={() => (
+                <StartPageComponent/>
             )}/>
 
         </div>

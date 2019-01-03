@@ -14,7 +14,7 @@ const PageSubtitleComponent = ({subtitle, comment, url, shrink}) => {
 				classNames={'appear-grow'}
 			>
 				<div
-					style={{backgroundImage: `url("${url}")`}}
+					style={{backgroundImage: `url("${url}")`, backgroundColor: url? 'transparent' : 'black'}}
 					className={['section-title'].join(' ')}
 					id={'page-subtitle'}>
 					{subtitle}

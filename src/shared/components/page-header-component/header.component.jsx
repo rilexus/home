@@ -18,21 +18,11 @@ const HeaderComponent = (props) => {
 		>
 			<header className={'header-component'}>
 				<div className={'head-content-wrapper'}>
-					<span className={'name-logo'}>Stanislav</span>
+					<span className={'name-logo'}>
+						<Link to={'/start'}>Stanislav</Link>
+					</span>
 					<div className={'links'}>
-						{/*<div className={'link'}>*/}
-							{/*<Link to={'/contact'}>Contact</Link>*/}
-							{/*<span className={'layer_1'}/>*/}
-							{/*<span className={'layer_2'}/>*/}
-							{/*<span className={'layer_3'}/>*/}
-						{/*</div>*/}
-						{/*<div className={'link'}>*/}
-							{/*<Link to={'/technology'}>Technology</Link>*/}
-						{/*</div>*/}
-                        {/*<div className={'link'}>*/}
-							{/*<Link to={'/bio'}>Bio</Link>*/}
-
-						{/*</div>*/}
+                        <HeaderLinkComponent to={'/start'} text={'Start'}/>
 						<HeaderLinkComponent to={'/contact'} text={'Contact'}/>
                         <HeaderLinkComponent to={'/technology'} text={'Technology'}/>
                         <HeaderLinkComponent to={'/bio'} text={'Bio'}/>

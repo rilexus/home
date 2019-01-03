@@ -39,13 +39,14 @@ class GreetingComponent extends React.Component {
 
     handleDecision(){
         this.setState(state => ({...state, showAwesome: true}));
-        setTimeout(()=>{
-            this.setState(state => ({
-                ...state,
-                showAwesome: false
-            }));
-            this.props.history.push('/bio');
-        }, 2200);
+        // setTimeout(()=>{
+        //     this.setState(state => ({
+        //         ...state,
+        //         showAwesome: false
+        //     }));
+        //     this.props.history.push('/start');
+        // }, 2200);
+        this.props.history.push('/start');
     }
 
 	handleAwesomeClick(word){
@@ -82,7 +83,7 @@ class GreetingComponent extends React.Component {
 						</div>
                         <InterestedComponent/>
                         <DecisionComponent onClick={()=>this.handleDecision()}/>
-                        <DarkenComponent show={this.state.showAwesome}/>
+                        {/*<DarkenComponent show={this.state.showAwesome}/>*/}
 					</div>
 				</CSSTransition>
 			</div>

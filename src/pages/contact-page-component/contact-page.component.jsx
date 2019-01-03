@@ -49,6 +49,8 @@ class ContactPageComponent extends React.Component{
                                 subtitle={'CALL ME'}
                                 comment={'ill wait'}
                                 // url={'https://media.giphy.com/media/l46C7yr4XM8YNWnEQ/giphy.gif'}
+
+                                //https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif
                                 url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
                                 shrink={this.state.minify}
                             />

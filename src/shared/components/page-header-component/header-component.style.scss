@@ -29,6 +29,11 @@ header.header-component {
     .name-logo {
       font-size: 1rem;
       font-weight: 700;
+      cursor: pointer;
+      a{
+        color: black;
+        text-decoration: none;
+      }
     }
   }
 
