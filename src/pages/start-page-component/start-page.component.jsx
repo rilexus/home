@@ -20,9 +20,9 @@ class StartPageComponent extends React.Component{
                 <HeaderComponent/>
                 <PageTitleComponent title={'Start'} comment={''}/>
                 <PageSubtitleComponent
-                    subtitle={'UX/XD Dev'}
-                    url={''}
-                    comment={'with passionate for design'}
+                    subtitle={'UX/XD'}
+                    url={'https://media.giphy.com/media/3oz8xTZLNWZ3W660bC/giphy.gif'}
+                    comment={'WITH PASSION FOR DESIGN'}
                 />
             </div>
         )

@@ -10,8 +10,8 @@ import {lurkerFace} from "./shared/utils";
 import {TechnologyPageComponent} from "./pages/technology-page/technology-page.component";
 import ContactPageComponent from "./pages/contact-page-component/contact-page.component";
 import StartPageComponent from "./pages/start-page-component/start-page.component";
-
-
+import OverViewPageComponent from "./pages/over-view-page-component/over-view-page.component";
+import FullViewComponent from "./full-view-component/full-view.component";
 
 
 class App extends Component {
@@ -47,7 +47,9 @@ class App extends Component {
     return (
         <div className="App">
 	        <Route path={'/'} exact render={() => (
-	        	<GreetingComponent/>
+                <FullViewComponent>
+                    <GreetingComponent/>
+                </FullViewComponent>
 	        )}/>
 
 	        <Route exact path={'/bio'} render={() => (
@@ -55,16 +57,21 @@ class App extends Component {
 	        )}/>
 
 	        <Route exact path={'/technology'} render={() => (
-		        <TechnologyPageComponent/>
+                <FullViewComponent>
+                    <TechnologyPageComponent/>
+                </FullViewComponent>
 	        )}/>
 
             <Route exact path={'/contact'} render={() => (
-                <ContactPageComponent/>
+                <FullViewComponent>
+                    <ContactPageComponent/>
+                </FullViewComponent>
             )}/>
             <Route exact path={'/start'} render={() => (
                 <StartPageComponent/>
             )}/>
 
+            <OverViewPageComponent/>
         </div>
     );
   }

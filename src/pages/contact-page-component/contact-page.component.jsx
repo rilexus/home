@@ -47,7 +47,7 @@ class ContactPageComponent extends React.Component{
                             <PageTitleComponent title={'Contact'} comment={''}/>
                             <PageSubtitleComponent
                                 subtitle={'CALL ME'}
-                                comment={'ill wait'}
+                                comment={'ILL WAIT'}
                                 // url={'https://media.giphy.com/media/l46C7yr4XM8YNWnEQ/giphy.gif'}
 
                                 //https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif
