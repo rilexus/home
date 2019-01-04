@@ -67,7 +67,9 @@ class App extends Component {
                 </FullViewComponent>
             )}/>
             <Route exact path={'/start'} render={() => (
-                <StartPageComponent/>
+	            <FullViewComponent>
+                    <StartPageComponent/>
+	            </FullViewComponent>
             )}/>
 
             <OverViewPageComponent/>

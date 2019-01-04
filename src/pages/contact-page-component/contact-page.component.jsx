@@ -18,7 +18,7 @@ class ContactPageComponent extends React.Component{
     }
 
     handleScroll(pos){
-        if(pos > 50){
+        if(pos > 205){
             this.setState(s => ({
                 ...s,
                 minify: true,
@@ -33,47 +33,37 @@ class ContactPageComponent extends React.Component{
 
     render(){
         return(
-                <div className={'contact-page-component'}
-                     onScroll={(e)=> this.handleScroll(e.target.scrollTop)}
-                >
+                <div className={'contact-page-component'} onScroll={(e)=> this.handleScroll(e.target.scrollTop)}>
+	                <HeaderComponent/>
+	                <PageTitleComponent
+		                title={'Contact'} comment={''}/>
+	                <PageSubtitleComponent
+		                subtitle={'CALL ME'}
+		                comment={'and let’s chat'}
+		                url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
+		                shrink={this.state.minify}
+	                />
+                    
                     <CSSTransition
                         in
                         appear
                         timeout={400}
-                        classNames={'contact-page-animation'}
-                    >
-                        <div className="scroll-wrapper">
-                            <HeaderComponent/>
-                            <PageTitleComponent title={'Contact'} comment={''}/>
-                            <PageSubtitleComponent
-                                subtitle={'CALL ME'}
-                                comment={'ILL WAIT'}
-                                // url={'https://media.giphy.com/media/l46C7yr4XM8YNWnEQ/giphy.gif'}
-
-                                //https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif
-                                url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
-                                shrink={this.state.minify}
-                            />
-                            <div>
-                                <ScrollDownIconComponent fade={this.state.minify}/>
+                        classNames={'contact-page-animation'}>
+                        
+                        <section className="content">
+                            <div className="content-text">
+                                <h2>
+                                    Let’s talk
+                                </h2>
+                                <p>
+                                    If you have a project in mind lets chat about it.
+                                    I will be happy to hear you ideas and giving you advice on best practices.
+                                </p>
+	                            <a href="mailto:mail@stanislavpanchenko.de">mail@stanislavpanchenko.de</a>
                             </div>
-                            <div className="contact">
-                                <div className="phone">
-                                    <span className={'label'}>Phone:</span>
-                                    <WordUnfoldComponent
-                                        word={'+4917645840631'}
-                                        in_={this.state.minify}
-                                        delay={30}/>
-                                </div>
-                                <div className={'mail'}>
-                                    <span className={'label'}>Mail:</span>
-                                    <WordUnfoldComponent
-                                        in_={this.state.minify}
-                                        delay={30}
-                                        word={'mail@stanislavpanchenko.de'}/>
-                                </div>
-                            </div>
-                        </div>
+                            
+                            
+                        </section>
                     </CSSTransition>
                 </div>
         )

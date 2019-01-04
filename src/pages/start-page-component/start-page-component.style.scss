@@ -1,3 +1,52 @@
 .start-page-component {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
 
+
+  .content{
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    // min-height: 73vh;
+
+
+    .list{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+        width: 46%;
+      }
+    }
+
+  }
+  section.recent-works{
+    margin-top: 200px;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+
+    .no-proj{
+      font-size: 1rem;
+      font-weight: 900;
+      opacity: .3;
+      text-align: center;
+      margin: 70px;
+    }
+  }
+
+  section.about-me{
+    background-color: #fbfcfd;
+    padding-top: 100px;
+    .greeting{
+      color: black;
+      font-size: 1.6rem;
+    }
+  }
 }

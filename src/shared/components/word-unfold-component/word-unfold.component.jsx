@@ -9,10 +9,10 @@ const WordUnfoldComponent = ({word, delay, in_}) => {
     return (
         <CSSTransition
             classNames={'word-unfold-animation'}
-            timeout={500}
+            timeout={100}
             in={in_}
             appear
-            unmountOnExit
+            // unmountOnExit
         >
             <span className={'word-unfold-component'}>
             {

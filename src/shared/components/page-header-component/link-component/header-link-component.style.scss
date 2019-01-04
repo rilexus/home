@@ -6,10 +6,12 @@
     margin-top: 20px;
     margin-right: 20px;
     margin-left: 20px;
+    font-size: 0.96rem;
+    //font-weight: 200;
     color: black;
+    -webkit-transition: color .19s;
     transition: color .19s;
     display: block;
-    font-style: italic;
     text-decoration: none;
   }
 

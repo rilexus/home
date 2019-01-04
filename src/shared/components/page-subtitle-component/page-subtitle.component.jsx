@@ -13,16 +13,19 @@ const PageSubtitleComponent = ({subtitle, comment, url, shrink}) => {
 				timeout={400}
 				classNames={'appear-grow'}
 			>
-				<div
-					style={{backgroundImage: `url("${url}")`, backgroundColor: url? 'transparent' : 'black'}}
-					className={['section-title'].join(' ')}
-					id={'page-subtitle'}>
-					{subtitle}
+				<div className="subtitle-wrapper">
+					<div style={{
+						backgroundImage: `url("${url}")`,
+						backgroundColor: url? 'transparent' : 'black'}}
+					    className={['section-title'].join(' ')}
+					    id={'page-subtitle'}>
+						{subtitle}
+					</div>
+					<div className="section-subtitle">
+						{comment}
+					</div>
 				</div>
 			</CSSTransition>
-			<div className="section-subtitle">
-				{comment}
-			</div>
 		</section>
 	);
 };

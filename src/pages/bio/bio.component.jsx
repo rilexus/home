@@ -8,7 +8,9 @@ export class BioComponent extends React.Component{
 	interval_2 = -1;
 	
 	state ={
-		numbers: ['', 'GET', 'READY', 'FOR' , 'MY' , 'BIO!'],
+		numbers: ['',
+			// 'GET', 'READY', 'FOR' , 'MY' , 'BIO!'
+		],
 		numberIndex: 1,
 		sidebarEnter: false,
 		bio:[
@@ -49,16 +51,16 @@ export class BioComponent extends React.Component{
 			'CAN',
 			'START',
 			'NOW',
-			'MAX',
-			'20',
-			'HOURS',
-			'PER',
-			'WEEK',
-			'NEEDS',
-			'1300',
-			'$',
-			'TO',
-			'SURVIVE',
+			// 'MAX',
+			// '20',
+			// 'HOURS',
+			// 'PER',
+			// 'WEEK',
+			// 'NEEDS',
+			// '1300',
+			// '$',
+			// 'TO',
+			// 'SURVIVE',
 		],
 		index: 0,
 		
@@ -71,7 +73,6 @@ export class BioComponent extends React.Component{
 	componentWillUnmount() {
 		if(this.interval_2 !== -1){
 			clearInterval(this.interval_2);
-			console.log('hier');
 		}
 		if(this.interval_1 !== -1){
 			clearInterval(this.interval_1);
@@ -96,8 +97,8 @@ export class BioComponent extends React.Component{
 				} else {
 					clearInterval(this.interval_1)
 				}
-			}, 1000);
-		},1000);
+			}, 1000);// show numbers
+		},1000); //wait till action
 		
 		setTimeout(()=>{
 			this.interval_2 = setInterval(()=>{
@@ -109,9 +110,9 @@ export class BioComponent extends React.Component{
 				}else {
 					clearInterval(this.interval_2);
 				}
-			}, 200);
+			}, 200); // show bio (fast)
 			
-		}, 8000)
+		}, (this.state.numbers.length * 1000) + 2000) // wait till numbers were shown
 	}
 	handleNextClick(){
 		this.setState(state => ({

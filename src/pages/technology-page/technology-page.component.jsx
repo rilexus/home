@@ -90,7 +90,7 @@ export class TechnologyPageComponent extends React.Component{
 	};
 	
 	handleScroll(pos){
-		if(pos > 35){
+		if(pos > 200){
 			this.setState(s => ({
 				...s,
 				shrink: true
@@ -143,7 +143,15 @@ export class TechnologyPageComponent extends React.Component{
                     <div className={'side-overlay'}/>
                 </CSSTransition>
 				<HeaderComponent/>
+				<PageTitleComponent title={'Technology'} comment={''}/>
 				
+				<PageSubtitleComponent
+					subtitle={'DEV TEC'}
+					shrink={this.state.shrink}
+					comment={'TECH IM PASSIONATE ABOUT'}
+					url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
+					//url={'https://media.giphy.com/media/l46C7yr4XM8YNWnEQ/giphy.gif'}
+				/>
 				<CSSTransition
 					in={this.state.showContent}
 					appear
@@ -151,16 +159,6 @@ export class TechnologyPageComponent extends React.Component{
 					classNames={'anim'}
 				>
 					<div className="page-wrapper">
-						<PageTitleComponent title={'Technology'} comment={''}/>
-						
-						<PageSubtitleComponent
-							subtitle={'TECH I LOVE'}
-							shrink={this.state.shrink}
-							comment={'TECH IM PASSIONATE ABOUT'}
-							url={'https://media.giphy.com/media/l46C7yr4XM8YNWnEQ/giphy.gif'}
-							// url={'https://media3.giphy.com/media/3oFzlUASnAYgzmujja/giphy.gif?cid=3640f6095c28cf3a3677586351192a65'}
-						/>
-						
 						<section className={'tech'}>
 							<div className={'open-indicator'}
 								 style={{left: this.state.indicatorPos + 'px'}}

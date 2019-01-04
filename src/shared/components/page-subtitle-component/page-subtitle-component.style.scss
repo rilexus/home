@@ -10,15 +10,23 @@ section.page-subtitle{
   transition: height $animation-time, transform $animation-time;
   overflow: hidden;
 
+
   &.shrink{
-    height: 10vh;
-    transform: translate(0, -50%);
-    .section-title{
-      font-size: 3rem;
-      margin-top: 0;
-    }
-    .section-subtitle{
-      font-size: 1rem;
+    .subtitle-wrapper{
+      //position: fixed;
+      //width: 100%;
+      //top: 30px;
+      //left: 0;
+      .section-title{
+        //font-size: 3rem;
+        //margin-top: 0;
+        //left: 87%;
+      }
+      .section-subtitle{
+        //font-size: 1rem;
+        //top: 4rem;
+        //left: 87%;
+      }
     }
   }
 
@@ -34,13 +42,13 @@ section.page-subtitle{
     width: 100%;
   }
 
-  .section-title{
-    font-weight: 900;
-    color: #dedede;
-    font-size: 11rem;
-    margin-top: 10vh;
-    text-align: center;
-    transition: transform 400ms, font-size $animation-time, margin-top $animation-time;
+  .subtitle-wrapper{
+    transition:
+            transform 400ms,
+            font-size $animation-time,
+            top $animation-time,
+            //position $animation-time,
+            margin-top $animation-time;
     transform: scaleY(0);
 
     &.appear-grow{
@@ -54,16 +62,25 @@ section.page-subtitle{
       }
 
     }
-  }
-  .section-subtitle{
-    font-size: 2rem;
-    font-weight: 900;
-    text-align: center;
-    transition: font-size $animation-time;
-    color: #2b2b2b;
-  }
-  #page-subtitle{
-    @include textBackgroundImage('')
-    //https://media3.giphy.com/media/3oFzlUASnAYgzmujja/giphy.gif?cid=3640f6095c28cf3a3677586351192a65
+
+    .section-title{
+      font-weight: 900;
+      color: #dedede;
+      font-size: 11rem;
+      text-align: center;
+      transition: font-size $animation-time, left $animation-time;
+    }
+    .section-subtitle{
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+
+      transition: font-size $animation-time, left $animation-time, top $animation-time;
+
+      //color: #2b2b2b;
+    }
+    #page-subtitle{
+      @include textBackgroundImage('')
+    }
   }
 }

@@ -17,7 +17,7 @@ class OverViewPageComponent extends React.Component{
         mouseOnView: false,
         title: 'All Pages',
 	    defaultTitleVisible: true,
-        subtitle: 'overview',
+        subtitle: 'all subsites',
 		views: [
 			{
 				title: 'Start',
@@ -217,9 +217,9 @@ class OverViewPageComponent extends React.Component{
                          
                         </div>
                         
-						<div className="subtitle">
-							{this.state.subtitle}
-						</div>
+						{/*<div className="subtitle">*/}
+							{/*{this.state.subtitle}*/}
+						{/*</div>*/}
 						<CSSTransition
 							in
 							appear

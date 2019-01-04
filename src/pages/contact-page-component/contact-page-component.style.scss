@@ -9,7 +9,11 @@
   overflow-x: hidden;
   padding-right: 40px;
 
-  .scroll-wrapper{
+  .mouse-icon{
+    height: 300px;
+  }
+
+  .content{
     height: 100%;
     transform: scale(.7);
     opacity: 0;
@@ -25,6 +29,35 @@
         &-done{
           opacity: 1;
           transform: scale(1);
+        }
+      }
+    }
+
+    .content-text{
+      text-align: center;
+      width: 40%;
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      a{
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 15px;
+        padding-left: 35px;
+        padding-right: 35px;
+        font-weight: 600;
+        color: white;
+        background-color: black;
+        font-size: .8rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform .4s;
+        box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.19);
+
+        &:hover{
+          transform: translate(0%, -5%);
+          box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.19);
         }
       }
     }

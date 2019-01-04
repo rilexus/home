@@ -15,9 +15,11 @@ const PageTitleComponent = ({title, comment}) => {
 			classNames={'page-title-animation'}
 		>
 			<div className={'page-title-component'}>
-				{
-					title
-				}
+				<h3>
+					{
+						title
+					}
+				</h3>
 				<span>
 					{
 						comment
