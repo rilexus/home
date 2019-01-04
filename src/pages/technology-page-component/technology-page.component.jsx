@@ -148,7 +148,7 @@ export class TechnologyPageComponent extends React.Component{
 				<PageSubtitleComponent
 					subtitle={'DEV TEC'}
 					shrink={this.state.shrink}
-					comment={'TECH IM PASSIONATE ABOUT'}
+					comment={'TECH I’M PASSIONATE ABOUT'}
 					url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
 					//url={'https://media.giphy.com/media/l46C7yr4XM8YNWnEQ/giphy.gif'}
 				/>

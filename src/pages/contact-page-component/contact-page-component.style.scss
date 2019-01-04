@@ -1,7 +1,6 @@
 .contact-page-component{
   position: relative;
-  //top: 0;
-  //left: 0;
+
   height: 100%;
   width: 100%;
   background-color: white;
@@ -9,18 +8,13 @@
   overflow-x: hidden;
   padding-right: 40px;
 
-  .mouse-icon{
-    height: 300px;
-  }
 
-  .content{
-    height: 100%;
-    transform: scale(.7);
+
+  .animation-wrapper{
     opacity: 0;
+    transform: scale(.7);
     transition: opacity .2s, transform .2s;
-
-
-    &.contact-page-animation{
+    &.animation-wrapper-animation{
       &-enter{
         &-active{
           opacity: 1;
@@ -33,19 +27,46 @@
       }
     }
 
+
+    .mouse-icon{
+      height: 300px;
+    }
+
+
     .content-text{
       text-align: center;
-      width: 40%;
+      width: 60%;
       position: relative;
       display: block;
       margin-left: auto;
       margin-right: auto;
+
+      opacity: 0;
+      transform: scale(.7);
+      transition: opacity .4s, transform .4s;
+      &.content-text-animation{
+        &-enter{
+          &-active{
+            opacity: 1;
+            transform: scale(1);
+          }
+          &-done{
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+
+
       a{
         border: 1px solid black;
         border-radius: 5px;
-        padding: 15px;
-        padding-left: 35px;
-        padding-right: 35px;
+        padding: {
+          right: 35px;
+          left: 35px;
+          top: 15px;
+          bottom: 15px;
+        };
         font-weight: 600;
         color: white;
         background-color: black;
@@ -74,5 +95,7 @@
       font-weight: 600;
       color: #232323;
     }
+
   }
+
 }

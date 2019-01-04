@@ -50,6 +50,7 @@ section.page-subtitle{
             //position $animation-time,
             margin-top $animation-time;
     transform: scaleY(0);
+    text-align: center;
 
     &.appear-grow{
       &-enter{
@@ -66,7 +67,12 @@ section.page-subtitle{
     .section-title{
       font-weight: 900;
       color: #dedede;
-      font-size: 11rem;
+      font-size: 7rem;
+      display: inline-block;
+      padding: { // stretch the gif animation
+        left: 100px;
+        right: 100px;
+      };
       text-align: center;
       transition: font-size $animation-time, left $animation-time;
     }
