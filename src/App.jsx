@@ -5,8 +5,8 @@ import {lurkerFace} from "./shared/utils";
 import OverViewPageComponent from "./pages/over-view-page-component/over-view-page.component";
 import FullViewComponent from "./full-view-component/full-view.component";
 import AboutMePageComponent from "./pages/about-me-page-component/about-me-page.component";
-import {BioComponent} from "./pages/bio/bio.component";
-import {TechnologyPageComponent} from "./pages/technology-page/technology-page.component";
+import {BioComponent} from "./pages/bio-page-component/bio.component";
+import {TechnologyPageComponent} from "./pages/technology-page-component/technology-page.component";
 import ContactPageComponent from "./pages/contact-page-component/contact-page.component";
 import * as uuid from "uuid";
 import StartPageComponent from "./pages/start-page-component/start-page.component";
@@ -87,10 +87,10 @@ class App extends Component {
             />
 
             {
-                this.state.pages.map(({url, PageComponent}, idx) => {
+                this.state.pages.map(({url, title, PageComponent}) => {
                     return(
                         <Route
-                            key={`component_${idx}`}
+                            key={`page-component:${title}`}
                             path={url}
                             exact
                             render={()=>(

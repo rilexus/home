@@ -2,6 +2,9 @@ import React from 'react';
 import HeaderComponent from "../../shared/components/page-header-component/header.component";
 import PageTitleComponent from "../../shared/components/page-title-component/page-title.component";
 import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
+import './about-me-page-component.style.scss';
+import PageContentWrapperComponent
+    from "../../shared/components/page-content-wrapper-component/page-content-wrapper.component";
 
 
 
@@ -24,9 +27,9 @@ class AboutMePageComponent extends React.Component{
                     url={''}
                     shrink={false}
                     comment={''}/>
-                <div className="content">
-                    <h2>About Me</h2>
-                </div>
+                <PageContentWrapperComponent>
+                    <h3>About Me</h3>
+                </PageContentWrapperComponent>
             </div>
         )
     }

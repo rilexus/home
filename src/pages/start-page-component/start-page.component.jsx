@@ -8,6 +8,8 @@ import ScrollDownIconComponent from "../../shared/components/scroll-down-icon-co
 import WordUnfoldComponent from "../../shared/components/word-unfold-component/word-unfold.component";
 import * as uuid from "uuid";
 import {CSSTransition} from "react-transition-group";
+import PageContentWrapperComponent
+    from "../../shared/components/page-content-wrapper-component/page-content-wrapper.component";
 
 
 class StartPageComponent_ extends React.Component{
@@ -77,7 +79,8 @@ class StartPageComponent_ extends React.Component{
                 />
                 <ScrollDownIconComponent fade={this.state.mouseVisible}/>
                 <main>
-                    <section className="content">
+                    {/*<section className="content">*/}
+                    <PageContentWrapperComponent>
                         <h2>
                             <WordUnfoldComponent
                                 delay={20}
@@ -110,38 +113,28 @@ class StartPageComponent_ extends React.Component{
                                 })
                             }
                         </ul>
+                    </PageContentWrapperComponent>
 
-                    </section>
-
-                    <section className={'recent-works'}>
-                        <div className="content">
+                    {/*</section>*/}
+                    <div className={'recent-works'}>
+                        <PageContentWrapperComponent>
                             <h4>
                                 RECENT WORK
                             </h4>
                             <p className={'no-proj'}>
                                 NO PUBLIC PROJECTS YET
                             </p>
-                            {/*<ul className={'list'}>*/}
-                            {/*<li className={'work'}>*/}
-                            {/*<a href="">*/}
-                            {/*<div className="content">*/}
+                        </PageContentWrapperComponent>
+                    </div>
 
-                            {/*</div>*/}
-                            {/*</a>*/}
-                            {/*</li>*/}
-
-                            {/*</ul>*/}
-                        </div>
-                    </section>
-
-                    <section className={'about-me'}>
-                        <div className="content">
+                    <div className={'about-me'}>
+                        <PageContentWrapperComponent>
                             <h3>Hi! I’m Stanislav</h3>
                             <p className={'greeting'}>
                                 Hallo, my name is Stanislav(Stan) Panchenko.
                                 I’m currently studying Computer Science in Aachen, Germany
                                 and work as a frontend developer.
-                                By side that i’m crazy about web design design and UX/XD.
+                                By side that i’m crazy about web design and UX/XD.
                             </p>
                             <p>
                                 Currently i’m not occupied with any projects and have time to help you building
@@ -151,8 +144,8 @@ class StartPageComponent_ extends React.Component{
                             <p>
                                 I’m passionate about programming and designing, awesome websites.
                             </p>
-                        </div>
-                    </section>
+                        </PageContentWrapperComponent>
+                    </div>
                 </main>
             </div>
         )

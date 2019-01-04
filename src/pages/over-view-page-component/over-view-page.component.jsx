@@ -2,9 +2,9 @@ import React from 'react';
 import './over-view-page-component.style.scss';
 import { CSSTransition, TransitionGroup} from 'react-transition-group';
 import uuid from 'uuid';
-import {TechnologyPageComponent} from "../technology-page/technology-page.component";
+import {TechnologyPageComponent} from "../technology-page-component/technology-page.component";
 import ContactPageComponent from "../contact-page-component/contact-page.component";
-import {BioComponent} from "../bio/bio.component";
+import {BioComponent} from "../bio-page-component/bio.component";
 import {withRouter} from "react-router-dom";
 import StartPageComponent from "../start-page-component/start-page.component";
 

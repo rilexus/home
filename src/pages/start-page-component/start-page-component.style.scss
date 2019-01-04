@@ -5,46 +5,40 @@
   width: 100%;
 
 
-  .content{
-    width: 66%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    // min-height: 73vh;
+  .list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 
+    li{
+      list-style: none;
+      width: 46%;
+      margin-bottom: 5vh;
 
-    .list{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      li{
-        list-style: none;
-        width: 46%;
-        margin-bottom: 5vh;
-
-        opacity: 0;
-        transform: translate(0, 15%);
-        transition: opacity 400ms, transform 400ms;
-        &.li-animation{
-          &-enter{
-            &-active{
-              opacity: 1;
-              transform: translate(0, 0);
-            }
-            &-done{
-              opacity: 1;
-              transform: translate(0, 0);
-            }
+      opacity: 0;
+      transform: translate(0, 15%);
+      transition: opacity 400ms, transform 400ms;
+      &.li-animation{
+        &-enter{
+          &-active{
+            opacity: 1;
+            transform: translate(0, 0);
+          }
+          &-done{
+            opacity: 1;
+            transform: translate(0, 0);
           }
         }
       }
     }
 
   }
-  section.recent-works{
+
+
+  .recent-works{
     margin-top: 200px;
     border-top: 1px solid #f1f1f1;
     border-bottom: 1px solid #f1f1f1;
@@ -58,7 +52,7 @@
     }
   }
 
-  section.about-me{
+  .about-me{
     background-color: #fbfcfd;
     padding: {
       top: 20vh;
