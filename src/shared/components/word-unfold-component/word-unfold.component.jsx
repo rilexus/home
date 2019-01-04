@@ -11,15 +11,14 @@ const WordUnfoldComponent = ({word, delay, in_}) => {
             classNames={'word-unfold-animation'}
             timeout={100}
             in={in_}
-            appear
-            // unmountOnExit
-        >
+            appear>
+
             <span className={'word-unfold-component'}>
             {
                 word.split('').map((letter, idx) => {
                     return (
                         <span
-                            className={'letter'}
+                            className={['letter', letter === ' ' ? 'space': null].join(' ')}
                             style={{transitionDelay: `${delay * idx}ms`}}
                             key={`letter_${letter}-${idx}`}>
                             {letter}

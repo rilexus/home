@@ -4,11 +4,10 @@ import './greeting.style.scss';
 import {textBackgroundImgStyle} from "../../shared/utils";
 import InterestedComponent from "./interested/interested.component";
 import DecisionComponent from "./decision-component/decision.component";
-import DarkenComponent from "./darken-component/darken.component";
 import {withRouter} from "react-router-dom";
 
 
-class GreetingComponent extends React.Component {
+class GreetingComponent_ extends React.Component {
 	
 	state = {
 		words:[
@@ -90,4 +89,5 @@ class GreetingComponent extends React.Component {
 		)
 	}
 }
-export default withRouter(GreetingComponent);
+const GreetingComponent = withRouter(GreetingComponent_);
+export default GreetingComponent

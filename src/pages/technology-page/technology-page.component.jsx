@@ -183,9 +183,11 @@ export class TechnologyPageComponent extends React.Component{
 													<div key={`key_${name}`} className={['tech-description',]}>
 														<div className="tab-content">
 															<div className="descr">
-																{
-																	descr
-																}
+																<p>
+																	{
+																		descr
+																	}
+																</p>
 															</div>
 															<div className="img-wrapper">
 																<img

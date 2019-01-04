@@ -6,7 +6,7 @@
 
 
   .content{
-    width: 60%;
+    width: 66%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -23,6 +23,23 @@
       li{
         list-style: none;
         width: 46%;
+        margin-bottom: 5vh;
+
+        opacity: 0;
+        transform: translate(0, 15%);
+        transition: opacity 400ms, transform 400ms;
+        &.li-animation{
+          &-enter{
+            &-active{
+              opacity: 1;
+              transform: translate(0, 0);
+            }
+            &-done{
+              opacity: 1;
+              transform: translate(0, 0);
+            }
+          }
+        }
       }
     }
 
@@ -43,7 +60,10 @@
 
   section.about-me{
     background-color: #fbfcfd;
-    padding-top: 100px;
+    padding: {
+      top: 20vh;
+      bottom: 20vh;
+    };
     .greeting{
       color: black;
       font-size: 1.6rem;

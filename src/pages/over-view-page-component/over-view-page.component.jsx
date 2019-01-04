@@ -11,38 +11,21 @@ import StartPageComponent from "../start-page-component/start-page.component";
 
 
 class OverViewPageComponent extends React.Component{
+
+	constructor(props){
+		super(props);
+
+		this.state = {
+            visible: false,
+            mouseOnView: false,
+            title: 'All Pages',
+            defaultTitleVisible: true,
+            subtitle: 'all subsites',
+			views: props.pages.map(page => ({...page, hovered: false}))
+		}
+	}
 	timeoutId = -1;
-    state = {
-		visible: false,
-        mouseOnView: false,
-        title: 'All Pages',
-	    defaultTitleVisible: true,
-        subtitle: 'all subsites',
-		views: [
-			{
-				title: 'Start',
-                url: '/start',
-				hovered: false,
-				id: uuid(),
-				component: <StartPageComponent/>
-			},
-			{
-				title: 'Contact',
-				url: '/contact',
-				hovered: false,
-				id: uuid(),
-                component: <ContactPageComponent/>
-			},
-			{
-				title: 'Technology',
-				hovered: false,
-				url: '/technology',
-				id: uuid(),
-				component: <TechnologyPageComponent/>
-			},
-		]
-	};
-	
+
 	
 	componentDidMount(){
 	
@@ -60,25 +43,6 @@ class OverViewPageComponent extends React.Component{
 			visible: !s.visible
 		}))
 	}
-	
-	toggleViewHover(withId){
-		this.setState(s => {
-			const newViews = s.views.map(view => {
-				if(view.id === withId){
-					view.hovered = !view.hovered;
-				}
-				return view;
-			});
-			
-			return{
-				...s,
-				views: [...newViews],
-				mouseOnView: !s.mouseOnView,
-			}
-			
-		})
-	}
-	
 	markUnhovered(id){
 		this.setState(s => {
 			const newViews = s.views.map(view => {
@@ -216,10 +180,7 @@ class OverViewPageComponent extends React.Component{
                             </CSSTransition>
                          
                         </div>
-                        
-						{/*<div className="subtitle">*/}
-							{/*{this.state.subtitle}*/}
-						{/*</div>*/}
+
 						<CSSTransition
 							in
 							appear
@@ -230,7 +191,7 @@ class OverViewPageComponent extends React.Component{
 						>
 							<div className="views">
 								{
-									this.state.views.map(({component ,title, id, hovered}, idx) => {
+									this.state.views.map(({PageComponent,title, id, hovered}, idx) => {
 										return(
 											<div
 												style={{
@@ -244,7 +205,7 @@ class OverViewPageComponent extends React.Component{
 												onMouseEnter={() => this.handleMouseEnterOnView(id)}
 												onMouseLeave={() => this.handleMouseLeaveOnView(id)}
 											>
-                                                {component}
+                                                <PageComponent/>
                                                 <div className="overlay"/>
 											</div>
 										)
