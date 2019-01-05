@@ -33,8 +33,8 @@ export const pages = [
     //     PageComponent: BioComponent,
     // },
     {
-        url: '/technology',
-        title: 'Technology',
+        url: '/tools',
+        title: 'Tools',
         id: uuid(),
         PageComponent: TechnologyPageComponent,
     },

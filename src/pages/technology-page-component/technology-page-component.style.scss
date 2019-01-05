@@ -73,93 +73,11 @@
       position: relative;
 
       .tech-titles{
-        height: 2.6rem;
+        height: 70px;
         overflow-y: hidden;
+        margin-top: 10vh;
       }
 
-      .open-indicator{
-        height: 10px;
-        width: 130px;
-        background-color: black;
-        transition: left .4s;
-        position: absolute;
-        left: 0;
-        top: 40px;
-      }
-
-      .content{
-        height: 0;
-        overflow: hidden;
-        transition: height .2s;
-
-        &.open{
-          height: 440px;
-        }
-
-        .tech-description{
-          overflow: hidden;
-          margin-top: 100px;
-
-          transition: all .4s;
-
-
-          .tab-content{
-            display: flex;
-            padding: 50px;
-            align-items: center;
-            width: 66%;
-            justify-content: space-around;
-            margin-right: auto;
-            margin-left: auto;
-
-            @media only screen and (max-width: 980px) {
-              width: 100%;
-            }
-            @media only screen and (max-width: 120px) {
-              width: 80%;
-            }
-
-            .descr{
-              //line-height: 1.4;
-              //font-size: 21px;
-              width: 50%;
-              margin-top: 50px;
-              margin-bottom: 30px;
-              //color: #1d1d1d;
-
-              @media only screen and (max-width: 880px) {
-                height: 290px;
-              }
-            }
-            .img-wrapper{
-              #react_img{
-                animation-name: rotate;
-                animation-iteration-count: infinite;
-                animation-duration: 3s;
-                animation-timing-function: linear;
-              }
-
-              @keyframes rotate {
-                from{
-                  transform: rotate(0deg);
-                }
-                to{
-                  transform: rotate(360deg);
-                }
-              }
-
-              img{
-                width: auto;
-                margin-left: auto;
-                height: 200px;
-                display: block;
-                margin-right: auto;
-              }
-            }
-          }
-
-        }
-      }
     }
 
   }

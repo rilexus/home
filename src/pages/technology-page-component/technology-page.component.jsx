@@ -6,9 +6,10 @@ import './slide-animation.scss';
 
 import PageTitleComponent from "../../shared/components/page-title-component/page-title.component";
 import HeaderComponent from "../../shared/components/page-header-component/header.component";
-import UnfoldComponent from "../../unfold-component/unfold.component";
+import UnfoldComponent from "../../shared/components/unfold-component/unfold.component";
 import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
 import Wth3DEffect from "../../3DEffect/With3DEffect";
+import PopupComponent from "../../shared/components/popup-component/popup.component";
 
 
 const stuff = [
@@ -81,12 +82,14 @@ export class TechnologyPageComponent extends React.Component{
 	
 	state = {
 		bgColor: 'white',
-		openDescriptionName: 'React',
-		contentOpen: true,
-		indicatorPos: 30,
 		shrink: false,
-
-		showContent: false
+		popupPosition: {
+			top: 500,
+			left: 500
+		},
+		popupText: '',
+		popupSubtext:'',
+		showPopup: false
 	};
 	
 	handleScroll(pos){
@@ -126,6 +129,26 @@ export class TechnologyPageComponent extends React.Component{
 		},200)
 	}
 	
+	handlePopup(e){
+		const {top, left, name, url} = e;
+		this.setState(s => ({
+			...s,
+			popupPosition: {
+				top: top,
+				left: left
+			},
+			popupText: name,
+			popupSubtext: url,
+			showPopup: true,
+		}))
+	}
+	hidePopup(e){
+		this.setState(s => ({
+			...s,
+			showPopup: false
+		}))
+	}
+	
 	
 	render(){
 		return(
@@ -146,11 +169,19 @@ export class TechnologyPageComponent extends React.Component{
 				<PageTitleComponent title={'Technology'} comment={''}/>
 				
 				<PageSubtitleComponent
-					subtitle={'DEV TEC'}
+					subtitle={'MY TOOLS'}
 					shrink={this.state.shrink}
-					comment={'TECH I’M PASSIONATE ABOUT'}
+					comment={'I’M WORKING WITH'}
 					url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
-					//url={'https://media.giphy.com/media/l46C7yr4XM8YNWnEQ/giphy.gif'}
+				/>
+				
+				<PopupComponent
+					visible={this.state.showPopup}
+					top={this.state.popupPosition.top}
+					left={this.state.popupPosition.left}
+					text={this.state.popupText}
+					subtext={this.state.popupSubtext}
+					fromTop
 				/>
 				<CSSTransition
 					in={this.state.showContent}
@@ -160,50 +191,15 @@ export class TechnologyPageComponent extends React.Component{
 				>
 					<div className="page-wrapper">
 						<section className={'tech'}>
-							<div className={'open-indicator'}
-								 style={{left: this.state.indicatorPos + 'px'}}
-							/>
-							
 							<div className="tech-titles">
 								<UnfoldComponent
 									onClick={(e, name) => this.openDescription(e, name)}
 									delay={80}
-									values={stuff.map(({name}, idx) => name)}/>
-							</div>
-							
-							<div className={[
-								'content',
-								this.state.contentOpen ? 'open' : null
-							].join(' ')}>
-								
-									{
-										stuff.map(({name, descr, imgUrl}, idx) => {
-											if(name === this.state.openDescriptionName) {
-												return (
-													<div key={`key_${name}`} className={['tech-description',]}>
-														<div className="tab-content">
-															<div className="descr">
-																<p>
-																	{
-																		descr
-																	}
-																</p>
-															</div>
-															<div className="img-wrapper">
-																<img
-																	id={name === 'React' ? 'react_img' : null}
-																	src={imgUrl} alt=""/>
-															</div>
-														</div>
-													</div>
-												);
-											}
-										})
-									}
-								
+									onMouseEnter={(e) => this.handlePopup(e)}
+									onMouseLeave={ (e) => this.hidePopup(e)}
+									values={stuff.map(({name, imgUrl}, idx) => ({name, imgUrl}))}/>
 							</div>
 						</section>
-						
 					</div>
 				</CSSTransition>
 			</div>
