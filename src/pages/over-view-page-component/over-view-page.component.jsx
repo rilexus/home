@@ -7,6 +7,7 @@ import ContactPageComponent from "../contact-page-component/contact-page.compone
 import {BioComponent} from "../bio-page-component/bio.component";
 import {withRouter} from "react-router-dom";
 import StartPageComponent from "../start-page-component/start-page.component";
+import PopupComponent from "../../shared/components/popup-component/popup.component";
 
 
 
@@ -21,7 +22,12 @@ class OverViewPageComponent extends React.Component{
             title: 'All Pages',
             defaultTitleVisible: true,
             subtitle: 'all subsites',
-			views: props.pages.map(page => ({...page, hovered: false}))
+			views: props.pages.map(page => ({...page, hovered: false})),
+			
+			
+			popupTop: 0,
+			popupLeft: 0,
+			popupVisible: false
 		}
 	}
 	timeoutId = -1;
@@ -112,10 +118,6 @@ class OverViewPageComponent extends React.Component{
         },400);
 	}
 	
-	viewOnHoverStyle(){
-	   
-    }
-    
     navigateTo(url){
 	    this.props.history.push(url);
     }
@@ -127,10 +129,39 @@ class OverViewPageComponent extends React.Component{
 	    this.navigateTo(url);
     }
 	
+	handleButtonMouseLeave(e){
+		this.setState(s => ({
+			...s,
+			popupVisible: false
+		}))
+	}
+	handleButtonMouseEnter(e){
+		const {top, left} = e.target.getBoundingClientRect();
+		this.setState(s => ({
+			...s,
+			popupTop: top - 50,
+			popupLeft: left + 20,
+			popupVisible: true
+		}))
+	}
+	
 	render(){
 		return(
 			<div className={'over-view-page-component'}>
-				<button id={'over-view-button'} onClick={() => this.handleClick()}>
+				<PopupComponent
+					//visible={this.state.popupVisible}
+					visible={false}
+					text={'All Pages'}
+					top={this.state.popupTop}
+					left={this.state.popupLeft}
+					fromTop
+				/>
+				<button
+					id={'over-view-button'}
+					onClick={() => this.handleClick()}
+					onMouseEnter={e => this.handleButtonMouseEnter(e)}
+					onMouseLeave={e => this.handleButtonMouseLeave(e)}
+				>
 					<i className="material-icons">view_module</i>
 				</button>
 				

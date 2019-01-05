@@ -3,7 +3,7 @@ import './popup-component.style.scss';
 import {CSSTransition} from "react-transition-group";
 
 
-const PopupComponent = ({visible, top, left, text, subtext, fromTop}) => {
+const PopupComponent = ({visible, top, left, text, subtext, fromTop, classNames}) => {
 	return(
 		<CSSTransition
 			in={visible}
@@ -13,19 +13,19 @@ const PopupComponent = ({visible, top, left, text, subtext, fromTop}) => {
 			unmountOnExit
 			classNames={'popup-component-animation'}
 		>
-			<div className="popup-component"
+			<div className={["popup-component", classNames ? classNames.join(' ') : null].join(' ')}
 			     style={{
 				     top: `${top}px`,
 				     left: `${left}px`
 			     }}
 			>
 				<div className={'popup'}>
-					<div className="text">
+					<div className="popup-text">
 						{text}
 					</div>
 					{
 						subtext ?
-							<div className="subtext">
+							<div className="popup-subtext">
 								{subtext}
 							</div>
 							: null

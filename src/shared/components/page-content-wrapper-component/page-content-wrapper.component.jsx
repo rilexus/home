@@ -3,12 +3,12 @@ import './page-content-wrapper-component.style.scss';
 
 
 
-const PageContentWrapperComponent = (props) => {
+const PageContentWrapperComponent = ({children, classNames}) => {
 
     return (
-        <section className={'page-content-wrapper-component'}>
+        <section className={[`page-content-wrapper-component`, classNames ? classNames.join(' ') : ''].join(' ')}>
             {
-                props.children
+                children
             }
         </section>
     );

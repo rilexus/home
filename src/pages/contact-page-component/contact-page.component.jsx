@@ -50,26 +50,27 @@ class ContactPageComponent extends React.Component{
 							shrink={this.state.minify}
 						/>
 						
-						<PageContentWrapperComponent>
-							
-							<CSSTransition
-								in
-								appear
-								timeout={600}
-								classNames={'content-text-animation'}
-							>
-								<div className="content-text">
-									<h2>
-										Let’s talk
-									</h2>
-									<p>
-										If you have a project in mind lets chat about it.
-										I will be happy to hear you ideas and giving you advice on best practices.
-									</p>
-									<a href="mailto:mail@stanislavpanchenko.de">mail@stanislavpanchenko.de</a>
-								</div>
-							</CSSTransition>
-						</PageContentWrapperComponent>
+						<section>
+							<div className="wrapper">
+								<CSSTransition
+									in
+									appear
+									timeout={600}
+									classNames={'content-text-animation'}>
+									<div className="text-container">
+										<h2>
+											Let’s talk UI
+										</h2>
+										<p>
+											If you have a project in mind lets chat about it.
+											I will be happy to hear you ideas and giving you advice on best practices.
+										</p>
+										<a href="mailto:mail@stanislavpanchenko.de">mail@stanislavpanchenko.de</a>
+									</div>
+								</CSSTransition>
+							</div>
+						</section>
+						
 					</div>
 				</CSSTransition>
 			</div>

@@ -37,12 +37,7 @@
 
   }
 
-
   .recent-works{
-    margin-top: 200px;
-    border-top: 1px solid #f1f1f1;
-    border-bottom: 1px solid #f1f1f1;
-
     .no-proj{
       font-size: 1rem;
       font-weight: 900;
@@ -52,8 +47,11 @@
     }
   }
 
-  .about-me{
+  .grey-bg{
     background-color: #fbfcfd;
+  }
+
+  .about-me{
     padding: {
       top: 20vh;
       bottom: 20vh;

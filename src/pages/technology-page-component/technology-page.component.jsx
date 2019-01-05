@@ -10,6 +10,8 @@ import UnfoldComponent from "../../shared/components/unfold-component/unfold.com
 import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
 import Wth3DEffect from "../../3DEffect/With3DEffect";
 import PopupComponent from "../../shared/components/popup-component/popup.component";
+import PageContentWrapperComponent
+	from "../../shared/components/page-content-wrapper-component/page-content-wrapper.component";
 
 
 const stuff = [
@@ -166,7 +168,7 @@ export class TechnologyPageComponent extends React.Component{
                     <div className={'side-overlay'}/>
                 </CSSTransition>
 				<HeaderComponent/>
-				<PageTitleComponent title={'Technology'} comment={''}/>
+				<PageTitleComponent title={'Tools'} comment={''}/>
 				
 				<PageSubtitleComponent
 					subtitle={'MY TOOLS'}
@@ -200,6 +202,19 @@ export class TechnologyPageComponent extends React.Component{
 									values={stuff.map(({name, imgUrl}, idx) => ({name, imgUrl}))}/>
 							</div>
 						</section>
+						<PageContentWrapperComponent>
+							<div className="text center">
+								<h2>
+									Progress
+								</h2>
+								<p>
+									<a target={'_black'} href="https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html">Frontend development </a>
+									is not like it was 5 years ago. Technology is changing constantly!
+									With years i’ve got in contact with a lot of different technologies and tools for developing sites.
+								</p>
+							</div>
+						</PageContentWrapperComponent>
+						
 					</div>
 				</CSSTransition>
 			</div>

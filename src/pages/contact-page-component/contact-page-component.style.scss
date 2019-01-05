@@ -33,14 +33,8 @@
     }
 
 
-    .content-text{
+    .text-container{
       text-align: center;
-      width: 60%;
-      position: relative;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-
       opacity: 0;
       transform: scale(.7);
       transition: opacity .4s, transform .4s;
