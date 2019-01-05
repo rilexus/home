@@ -11,6 +11,7 @@ import GraphqlStatelessComponent from "./svgs/graphql-logo.component";
 import NestStatelessComponent from "./svgs/nestjs-logo.component";
 import SketchStatelessComponent from "./svgs/sketch-logo.component";
 import PhotoshopStatelessComponent from "./svgs/photoshop-logo.component";
+import IntellijStatelessComponent from "./svgs/intellij-logo.component";
 
 
 
@@ -69,6 +70,11 @@ const svgs = [
 		Component: PhotoshopStatelessComponent,
 		name: 'Photoshop',
 		url: 'https://adobe.com/products/photoshop.html',
+	},
+	{
+		Component: IntellijStatelessComponent,
+		name: 'Intellij',
+		url: 'https://jetbrains.com/idea/',
 	},
 	
 ];

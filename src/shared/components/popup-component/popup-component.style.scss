@@ -6,7 +6,10 @@
 
   opacity: 0;
   transform: translate(-50%);
-  transition: opacity 200ms, left 200ms, top 200ms;
+  transition:
+          opacity 200ms,
+          left 200ms,
+          top 200ms cubic-bezier(0.86, 0, 0.07, 1);
   &.popup-component-animation{
     &-enter{
       &-active{
