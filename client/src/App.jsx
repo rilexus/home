@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import {Route, withRouter} from "react-router";
+import {Route, withRouter, Redirect} from "react-router";
 import {lurkerFace} from "./shared/utils";
 import OverViewPageComponent from "./pages/over-view-page-component/over-view-page.component";
 import FullViewComponent from "./full-view-component/full-view.component";
@@ -12,6 +12,8 @@ import * as uuid from "uuid";
 import StartPageComponent from "./pages/start-page-component/start-page.component";
 import GreetingComponent from "./pages/greeting-page-component/greeting.component";
 import CookieBannerComponent from "./shared/components/cookie-banner-component/cookie-banner.component";
+import {Switch} from "react-router-dom";
+
 
 
 export const pages = [
@@ -76,33 +78,38 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-
-            <Route
-                path={'/'}
-                exact
-                render={()=>(
-                    <FullViewComponent>
-                        <GreetingComponent/>
-                    </FullViewComponent>
-                )}
-            />
-
-            {
-                this.state.pages.map(({url, title, PageComponent}) => {
-                    return(
-                        <Route
-                            key={`page-component:${title}`}
-                            path={url}
-                            exact
-                            render={()=>(
-                                <FullViewComponent>
-                                    <PageComponent/>
-                                </FullViewComponent>
-                            )}
-                        />
-                    );
-                })
-            }
+	
+	
+	        <Switch>
+		        <Route
+			        path={'/'}
+			        exact
+			        render={()=>(
+				        <FullViewComponent>
+					        <GreetingComponent/>
+				        </FullViewComponent>
+			        )}
+		        />
+		
+		        {
+			        this.state.pages.map(({url, title, PageComponent}) => {
+				        return(
+					        <Route
+						        key={`page-component:${title}`}
+						        path={url}
+						        exact
+						        render={()=>(
+							        <FullViewComponent>
+								        <PageComponent/>
+							        </FullViewComponent>
+						        )}
+					        />
+				        );
+			        })
+		        }
+		        <Redirect to="/start" />
+	        </Switch>
+            
 
             <OverViewPageComponent pages={[...this.state.pages]}/>
             <CookieBannerComponent/>
