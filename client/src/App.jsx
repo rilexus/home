@@ -73,6 +73,10 @@ class App extends Component {
 	      "%cSTOP LURKING! NOTHING TO SEE HERE!",
           "color: red; font-size: x-large"
       );
+	  
+	  fetch(
+	  	'http://localhost:3000/test'
+	  ).then(res => res.json()).then(d => console.log(d))
   }
 
   render() {

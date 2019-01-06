@@ -11,4 +11,9 @@ export class AppController {
 	  //res.sendFile(path.resolve('build/index.html'));
 	  res.sendFile("index.html");
   }
+	
+	@Get('/test')
+	async test(){
+		return {data: true};
+	}
 }
