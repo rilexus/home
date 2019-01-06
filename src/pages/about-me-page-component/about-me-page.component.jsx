@@ -46,9 +46,7 @@ class AboutMePageComponent extends React.Component{
 						                <a target={"_black"} href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14">UI designer </a>
 					                </strong>
 					                and
-					                <strong>
-						                <a target={"_black"} href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14"> UX expert.</a>
-					                </strong>
+					                <strong><a target={"_black"} href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14"> UX expert.</a> </strong>
 					                I love creating user centered and delightful
 					                interfaces for the web.
 				                </p>

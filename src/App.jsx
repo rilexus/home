@@ -11,6 +11,7 @@ import ContactPageComponent from "./pages/contact-page-component/contact-page.co
 import * as uuid from "uuid";
 import StartPageComponent from "./pages/start-page-component/start-page.component";
 import GreetingComponent from "./pages/greeting-page-component/greeting.component";
+import CookieBannerComponent from "./shared/components/cookie-banner-component/cookie-banner.component";
 
 
 export const pages = [
@@ -104,6 +105,7 @@ class App extends Component {
             }
 
             <OverViewPageComponent pages={[...this.state.pages]}/>
+            <CookieBannerComponent/>
         </div>
     );
   }
