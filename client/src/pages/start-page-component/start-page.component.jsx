@@ -8,19 +8,17 @@ import ScrollDownIconComponent from "../../shared/components/scroll-down-icon-co
 import WordUnfoldComponent from "../../shared/components/word-unfold-component/word-unfold.component";
 import * as uuid from "uuid";
 import {CSSTransition} from "react-transition-group";
-import PageContentWrapperComponent
-	from "../../shared/components/page-content-wrapper-component/page-content-wrapper.component";
 
 
 class StartPageComponent_ extends React.Component {
 	state = {
 		minify: false,
 		mouseVisible: false,
-		
+		listVisible: false,
 		greetingList: [
 			{
 				id: uuid(),
-				h: 'Development',
+				h: 'Practices',
 				p: 'I’m a programmer who knows design.\n' +
 					' I know best practices from both worlds and combine them\n' +
 					' in frontend development and UX/XD.\n' +
@@ -28,27 +26,23 @@ class StartPageComponent_ extends React.Component {
 			},
 			{
 				id: uuid(),
-				h: 'Process',
-				p: 'Before starting i make sure i understand the needs and requirements for the project. There for\n' +
-					' i ask a lot of questions and interview the future users.'
+				h: 'Full Stack',
+				p: 'I am competent in backend technologies as well as web design. I work equally well in a team or develop a project completely on my own.'
+			},
+			{
+				id: uuid(),
+				h: 'Prototyping',
+				p: 'After understanding all requirements I sketch out the first design and test it for functionality. Then I create a quick prototype. I say: "A prototype tells more than 100 sketches"'
 			},
 			{
 				id: uuid(),
 				h: 'Process',
-				p: 'Before starting i make sure i understand the needs and requirements for the project. There for\n' +
-					' i ask a lot of questions and interview the future users.'
+				p: 'Before starting to develop I make sure I understand the needs and requirements for the project. Therefore I ask a lot of questions and interview future users.'
 			},
 			{
 				id: uuid(),
-				h: 'Process',
-				p: 'Before starting i make sure i understand the needs and requirements for the project. There for\n' +
-					' i ask a lot of questions and interview the future users.'
-			},
-			{
-				id: uuid(),
-				h: 'Process',
-				p: 'Before starting i make sure i understand the needs and requirements for the project. There for\n' +
-					' i ask a lot of questions and interview the future users.'
+				h: 'Values',
+				p: ''
 			}
 		]
 	};
@@ -61,9 +55,17 @@ class StartPageComponent_ extends React.Component {
 			this.setState(s => ({...s, mouseVisible: true}))
 		}
 		if (height > 200) {
-			this.setState(s => ({...s, minify: true}))
+			this.setState(s => ({
+				...s,
+				minify: true,
+			}));
 		} else {
-			this.setState(s => ({...s, minify: false, mouseVisible: false}))
+			this.setState(s => ({
+				...s,
+				minify: false,
+				mouseVisible: false,
+				listVisible: false
+			}))
 		}
 		
 	}
@@ -72,50 +74,51 @@ class StartPageComponent_ extends React.Component {
 		return (
 			<div className={'start-page-component'} onScroll={(e) => this.handleScroll(e.target.scrollTop)}>
 				<HeaderComponent/>
-				<PageTitleComponent title={'Start'} comment={''}/>
+				<PageTitleComponent title={this.props.title} comment={''}/>
 				<PageSubtitleComponent
-					subtitle={'UX/XD'}
+					subtitle={'UX&UI'}
 					url={'https://media.giphy.com/media/3oz8xTZLNWZ3W660bC/giphy.gif'}
 					comment={'WITH PASSION FOR DESIGN'}
 				/>
 				<ScrollDownIconComponent fade={this.state.mouseVisible}/>
 				<main>
 					{/*<section className="content">*/}
-						<section>
+					<section>
 						<div className="wrapper">
-						
-						<h2>
-							<WordUnfoldComponent
-								delay={20}
-								word={'I\'m a Developer.'}
-								in_={this.state.minify}/>
-						</h2>
-						<p>
-							<WordUnfoldComponent
-								delay={30}
-								word={'with passion for design.'}
-								in_={this.state.minify}/>
-						</p>
-						<ul className={'list'}>
-							{
-								this.state.greetingList.map(({id, h, p}, idx) => {
-									return (
-										<CSSTransition
-											key={id}
-											in={this.state.minify}
-											appear
-											timeout={100}
-											classNames={'li-animation'}>
-											<li className={'li'}
-											    style={{transitionDelay: `${70 * idx}ms`}}>
-												<h3>{h}</h3>
-												<p>{p}</p>
-											</li>
-										</CSSTransition>
-									)
-								})
-							}
-						</ul>
+							
+							<h2>
+								<WordUnfoldComponent
+									delay={20}
+									word={'Hi! I\'m a Developer.'}
+									in_={this.state.minify}/>
+							</h2>
+							<p>
+								<WordUnfoldComponent
+									delay={30}
+									word={'With passion for design!'}
+									in_={this.state.minify}/>
+							</p>
+							<div className="wrapper">
+								<ul className={'list'}>
+									{
+										this.state.greetingList.map(({id, h, p}, idx) => {
+											return (
+												<CSSTransition
+													key={id}
+													in={this.state.minify}
+													timeout={100}
+													classNames={'li-animation'}>
+													<li className={'li'}
+													    style={{transitionDelay: `${70 * idx}ms`}}>
+														<h3>{h}</h3>
+														<p>{p}</p>
+													</li>
+												</CSSTransition>
+											)
+										})
+									}
+								</ul>
+							</div>
 						
 						</div>
 					</section>
@@ -145,14 +148,15 @@ class StartPageComponent_ extends React.Component {
 							<div className={'text-container'}>
 								<h3>Hi! I’m Stanislav</h3>
 								<p className={'greeting'}>
-									Hallo, my name is Stanislav(Stan) Panchenko.
-									I’m currently studying Computer Science in Aachen, Germany
-									and work as a frontend developer.
-									By side that i’m crazy about web design and UX/XD.
+									Hello, my name is Stanislav (Stan) Panchenko
+									and I’m crazy about web design and UX/XD.
+									I’m currently studying Computer Science in Aachen,
+									Germany and work as a frontend developer.
 								</p>
 								<p>
 									I’m always excited to start new projects! If you have ideas, let’s chat about it.
-									<Link to={'/contact'}> Drop me a message </Link> and lets create <strong> awesome</strong> sites.
+									<Link to={'/contact'}> Drop me a message </Link> and lets
+									create <strong> awesome</strong> sites.
 								</p>
 							</div>
 						</div>

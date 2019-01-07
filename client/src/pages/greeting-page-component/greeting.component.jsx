@@ -14,7 +14,7 @@ class GreetingComponent_ extends React.Component {
 			"LET'S",
 			'BUILD',
 			'MAGIC',
-			'STUFF',
+			'INTERFACES',
 			'TOGETHER',
 		],
 		sent: 'LETS BUILD MAGIC STUFF TOGETHER',
@@ -31,20 +31,13 @@ class GreetingComponent_ extends React.Component {
 		} else {
 			return {
 				color: '#323232',
-				transitionDelay: `${25*idx}ms`
+				transitionDelay: `${50*idx}ms`
 			}
 		}
 	};
 
     handleDecision(){
         this.setState(state => ({...state, showAwesome: true}));
-        // setTimeout(()=>{
-        //     this.setState(state => ({
-        //         ...state,
-        //         showAwesome: false
-        //     }));
-        //     this.props.history.push('/start');
-        // }, 2200);
         this.props.history.push('/start');
     }
 

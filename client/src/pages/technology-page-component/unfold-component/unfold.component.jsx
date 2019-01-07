@@ -93,7 +93,6 @@ const UnfoldComponent = ({delay, onClick, onMouseEnter, onMouseLeave}) => {
 			timeout={500}
 			in
 			appear
-			unmountOnExit
 		>
 			<div className="scroll">
 				<ul>

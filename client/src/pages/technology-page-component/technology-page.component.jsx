@@ -1,5 +1,5 @@
 import React from 'react';
-import { CSSTransition } from 'react-transition-group';
+import {CSSTransition} from 'react-transition-group';
 import '../../3DEffect/with3DEffect.scss';
 import './technology-page-component.style.scss';
 import './slide-animation.scss';
@@ -56,11 +56,11 @@ const stuff = [
 		descr: 'A progressive Node.js framework for building efficient, reliable and scalable server-side applications.',
 		imgUrl: 'https://nestjs.com/logo-small.5d4d1c8f.svg'
 	},
-	
+
 ];
 
 const withAnimation = (_in, appear, component, key) => {
-	return(
+	return (
 		<CSSTransition
 			key={key}
 			in={_in}
@@ -80,7 +80,7 @@ const withAnimation = (_in, appear, component, key) => {
 };
 
 
-export class TechnologyPageComponent extends React.Component{
+export class TechnologyPageComponent extends React.Component {
 	
 	state = {
 		bgColor: 'white',
@@ -90,17 +90,17 @@ export class TechnologyPageComponent extends React.Component{
 			left: 500
 		},
 		popupText: '',
-		popupSubtext:'',
+		popupSubtext: '',
 		showPopup: false
 	};
 	
-	handleScroll(pos){
-		if(pos > 200){
+	handleScroll(pos) {
+		if (pos > 200) {
 			this.setState(s => ({
 				...s,
 				shrink: true
 			}))
-		} else if(pos > 300){
+		} else if (pos > 300) {
 			this.setState(s => ({
 				...s,
 				bgColor: '#f2f2f2',
@@ -115,7 +115,7 @@ export class TechnologyPageComponent extends React.Component{
 		}
 	}
 	
-	openDescription(e,name) {
+	openDescription(e, name) {
 		const pos = e.target.getBoundingClientRect().left;
 		this.setState(s => ({
 			...s,
@@ -124,14 +124,14 @@ export class TechnologyPageComponent extends React.Component{
 			indicatorPos: pos
 		}))
 	}
-
-	showContent(){
-		setTimeout(()=>{
-            this.setState(s => ({...s, showContent: true}))
-		},200)
+	
+	showContent() {
+		setTimeout(() => {
+			this.setState(s => ({...s, showContent: true}))
+		}, 200)
 	}
 	
-	handlePopup(e){
+	handlePopup(e) {
 		const {top, left, name, url} = e;
 		this.setState(s => ({
 			...s,
@@ -144,7 +144,8 @@ export class TechnologyPageComponent extends React.Component{
 			showPopup: true,
 		}))
 	}
-	hidePopup(e){
+	
+	hidePopup(e) {
 		this.setState(s => ({
 			...s,
 			showPopup: false
@@ -152,26 +153,26 @@ export class TechnologyPageComponent extends React.Component{
 	}
 	
 	
-	render(){
-		return(
+	render() {
+		return (
 			<div className={'technology-page-component'}
-				 onScroll={(e)=> this.handleScroll(e.target.scrollTop)}
-				 style={{backgroundColor: this.state.bgColor}}>
-
-                <CSSTransition
-                    in
+			     onScroll={(e) => this.handleScroll(e.target.scrollTop)}
+			     style={{backgroundColor: this.state.bgColor}}>
+				
+				<CSSTransition
+					in
 					appear
-                    timeout={200}
-                    classNames={'enter'}
-                    onEntered={()=> this.showContent()}
-                >
-                    <div className={'side-overlay'}/>
-                </CSSTransition>
+					timeout={200}
+					classNames={'enter'}
+					onEntered={() => this.showContent()}
+				>
+					<div className={'side-overlay'}/>
+				</CSSTransition>
 				<HeaderComponent/>
-				<PageTitleComponent title={'Tools'} comment={''}/>
+				<PageTitleComponent title={this.props.title} comment={''}/>
 				
 				<PageSubtitleComponent
-					subtitle={'MY TOOLS'}
+					subtitle={'TOOLS'}
 					shrink={this.state.shrink}
 					comment={'I’M WORKING WITH'}
 					url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
@@ -193,32 +194,39 @@ export class TechnologyPageComponent extends React.Component{
 				>
 					
 					<div className="page-wrapper">
+						
 						<section className={'tech'}>
 							<div className="tech-titles">
 								<UnfoldComponent
 									onClick={(e, name) => this.openDescription(e, name)}
 									delay={80}
 									onMouseEnter={(e) => this.handlePopup(e)}
-									onMouseLeave={ (e) => this.hidePopup(e)}
+									onMouseLeave={(e) => this.hidePopup(e)}
 									values={stuff.map(({name, imgUrl}, idx) => ({name, imgUrl}))}/>
 							</div>
 						</section>
+						
 						<PageContentWrapperComponent>
 							<div className="text center">
 								<h2>
 									Progress
 								</h2>
 								<p>
-									<a target={'_black'} href="https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html">Frontend development </a>
-									is not like it was 5 years ago. Technology is changing constantly!
-									With years i’ve got in contact with a lot of different technologies and tools for developing sites.
+									<a target={'_black'}
+									   href="https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html">Frontend
+										development </a>
+									is not like it was 5 years ago.
+									Technology is changing constantly!
+									With years I’ve got in touch with many different technologies and
+									tools for developing websites.
 								</p>
 								<p>
-									Every tool serves a purpose and solves a specific problem. Those are my tools which help me solving my.
+									Every tool serves a certain purpose and solves a specific problem.
+									Those are my tools which help me solving mine.
 								</p>
 							</div>
 						</PageContentWrapperComponent>
-						
+					
 					</div>
 				</CSSTransition>
 			</div>

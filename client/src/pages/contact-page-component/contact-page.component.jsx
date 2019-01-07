@@ -4,8 +4,7 @@ import './contact-page-component.style.scss';
 import PageTitleComponent from "../../shared/components/page-title-component/page-title.component";
 import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
 import {CSSTransition} from "react-transition-group";
-import PageContentWrapperComponent
-	from "../../shared/components/page-content-wrapper-component/page-content-wrapper.component";
+
 
 
 class ContactPageComponent extends React.Component{
@@ -42,7 +41,7 @@ class ContactPageComponent extends React.Component{
 					<div className={'animation-wrapper'}>
 						<HeaderComponent/>
 						<PageTitleComponent
-							title={'Contact'} comment={''}/>
+							title={this.props.title} comment={''}/>
 						<PageSubtitleComponent
 							subtitle={'CALL ME'}
 							comment={'let’s chat'}

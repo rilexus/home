@@ -36,8 +36,8 @@ export const pages = [
     //     PageComponent: BioComponent,
     // },
     {
-        url: '/tools',
-        title: 'Tools',
+        url: '/technology',
+        title: 'Technology',
         id: uuid(),
         PageComponent: TechnologyPageComponent,
     },
@@ -104,7 +104,7 @@ class App extends Component {
 						        exact
 						        render={()=>(
 							        <FullViewComponent>
-								        <PageComponent/>
+								        <PageComponent title={title}/>
 							        </FullViewComponent>
 						        )}
 					        />

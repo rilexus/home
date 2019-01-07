@@ -11,7 +11,11 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0;
+    margin-top: 10vh;
     padding: 0;
+
+
+
 
     li{
       list-style: none;
@@ -19,7 +23,7 @@
       margin-bottom: 5vh;
 
       opacity: 0;
-      transform: translate(0, 15%);
+      transform: translate(0, 25%);
       transition: opacity 400ms, transform 400ms;
       &.li-animation{
         &-enter{

@@ -39,16 +39,15 @@ class AboutMePageComponent extends React.Component{
 	                <section>
 		                <div className="wrapper">
 			                <div className="text-container center">
-				                <h1 >Hallo, <br/> i’m Stanislav</h1>
+				                <h1 >Hello, I’m Stanislav</h1>
 				                <p>
 					                I’m a frontend developer,
 					                <strong>
-						                <a target={"_black"} href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14">UI designer </a>
+						                <a target={"_black"} href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14"> UI designer </a>
 					                </strong>
 					                and
 					                <strong><a target={"_black"} href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14"> UX geek.</a> </strong>
-					                I love creating user centered and delightful
-					                interfaces for the web.
+					                I love creating user-centered and delightful interfaces for the web.
 				                </p>
 			                </div>
 		                </div>
@@ -59,17 +58,18 @@ class AboutMePageComponent extends React.Component{
 	                        <h3>My Passion</h3>
 	                        <p>
 		                        <strong>Since school</strong> i had one hobby: User Interfaces.
-		                        Even when i hadn't programing skills i dived deep in to designing mobile interfaces.
+		                        Even when i hadn't programing skills i dived deep in to designing mobile interfaces
+		                        with graphic editors.
 		                        To be able to inhale life in to my designs i have started studying Computer Science.
 		                        And since then i combine CS knowledge with delightfull art to create awesome UI’s.
 	                        </p>
                         </div>
 	
                         <div className="text-container">
-                            <h3>I love creating things</h3>
+                            <h3>I l<span className={'icon'}>❤️</span>️ve creating things</h3>
                             <p>
 	                            I love creating UI’s. My whole life circles around code and UI’s.
-	                            There is hardly one days when i dont code interfaces. I love what i do <span className={'icon'}>❤️</span>
+	                            There is hardly one days when i dont code interfaces. I love what i do.
                             </p>
                         </div>
 	                    </div>
