@@ -1,0 +1,92 @@
+@import "../../../style/utils/mixins";
+
+$animation-time: 1s;
+section.page-subtitle{
+  width: 80%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50vh;
+  transition: height $animation-time, transform $animation-time;
+  overflow: hidden;
+
+
+  &.shrink{
+    .subtitle-wrapper{
+      //position: fixed;
+      //width: 100%;
+      //top: 30px;
+      //left: 0;
+      .section-title{
+        //font-size: 3rem;
+        //margin-top: 0;
+        //left: 87%;
+      }
+      .section-subtitle{
+        //font-size: 1rem;
+        //top: 4rem;
+        //left: 87%;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1080px) {
+    width: 90%;
+  }
+
+  @media only screen and (max-width: 980px) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 980px) {
+    width: 100%;
+  }
+
+  .subtitle-wrapper{
+    transition:
+            transform 400ms,
+            font-size $animation-time,
+            top $animation-time,
+            //position $animation-time,
+            margin-top $animation-time;
+    transform: scaleY(0);
+    text-align: center;
+
+    &.appear-grow{
+      &-enter{
+        &-active{
+          transform: scaleY(1);
+        }
+        &-done{
+          transform: scaleY(1);
+        }
+      }
+
+    }
+
+    .section-title{
+      font-weight: 900;
+      color: #dedede;
+      font-size: 7rem;
+      display: inline-block;
+      padding: { // stretch the gif animation
+        left: 120px;
+        right: 120px;
+      };
+      text-align: center;
+      transition: font-size $animation-time, left $animation-time;
+    }
+    .section-subtitle{
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+
+      transition: font-size $animation-time, left $animation-time, top $animation-time;
+
+      //color: #2b2b2b;
+    }
+    #page-subtitle{
+      @include textBackgroundImage('')
+    }
+  }
+}
