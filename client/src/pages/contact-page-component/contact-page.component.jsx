@@ -61,8 +61,8 @@ class ContactPageComponent extends React.Component{
 											Let’s talk about UI
 										</h2>
 										<p>
-											If you have a project in mind lets chat about it.
-											I will be happy to hear you ideas and giving you advice on best practices.
+                                            If you have a project in mind let's chat about it.
+											I will be happy to hear your ideas and give you feedback on best practices.
 										</p>
 										<a href="mailto:mail@stanislavpanchenko.de">mail@stanislavpanchenko.de</a>
 									</div>

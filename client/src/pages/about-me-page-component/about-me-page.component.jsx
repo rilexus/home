@@ -47,7 +47,7 @@ class AboutMePageComponent extends React.Component{
 					                </strong>
 					                and
 					                <strong><a target={"_black"} href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14"> UX geek.</a> </strong>
-					                I love creating user-centered and delightful interfaces for the web.
+                                    I love creating user-centered and delightful interfaces for the web.
 				                </p>
 			                </div>
 		                </div>
@@ -57,19 +57,20 @@ class AboutMePageComponent extends React.Component{
                         <div className="text-container">
 	                        <h3>My Passion</h3>
 	                        <p>
-		                        <strong>Since school</strong> i had one hobby: User Interfaces.
-		                        Even when i hadn't programing skills i dived deep in to designing mobile interfaces
-		                        with graphic editors.
-		                        To be able to inhale life in to my designs i have started studying Computer Science.
-		                        And since then i combine CS knowledge with delightfull art to create awesome UI’s.
+		                        <strong>Since school</strong> i had one hobby: designing user interfaces.
+                                Even when I didn't have programing skills I dived deep into designing mobile interfaces with graphics editors.
+                                To be able to add life into my designs I have started studying Computer Science.
+                                And since then I am combining CS knowledge with delightful art to create awesome UI’s.
 	                        </p>
                         </div>
 	
                         <div className="text-container">
                             <h3>I l<span className={'icon'}>❤️</span>️ve creating things</h3>
                             <p>
-	                            I love creating UI’s. My whole life circles around code and UI’s.
-	                            There is hardly one days when i dont code interfaces. I love what i do.
+                                I love creating UI’s.
+								My whole life revolves around code and UI’s.
+								There is hardly one day when I don't code interfaces.
+								I love what I do.
                             </p>
                         </div>
 	                    </div>
