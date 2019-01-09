@@ -134,7 +134,6 @@ class StartPageComponent_ extends React.Component {
 	handleList(scrollTop) {
 		const windowHeight = this.state.windowHeight;
 		if (scrollTop > (windowHeight * 3) - 200) {
-			console.log('hier')
 			this.setState(s => ({
 				...s,
 				listVisible: true
@@ -148,8 +147,6 @@ class StartPageComponent_ extends React.Component {
 	};
 	
 	handleScroll(scrollTop) {
-		console.log(scrollTop);
-		
 		this.handleMouseIcon(scrollTop);
 		this.handleSubtitle(scrollTop);
 		this.handleGreeting(scrollTop);

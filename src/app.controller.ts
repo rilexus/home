@@ -1,4 +1,4 @@
-import {Get, Controller, Res} from '@nestjs/common';
+import {Get, Controller, Res, Logger} from '@nestjs/common';
 import { AppService } from './app.service';
 import * as path from "path";
 
@@ -14,6 +14,7 @@ export class AppController {
 	
 	@Get('/test')
 	async test(){
+  	Logger.log('reached','AppController');
 		return {data: true};
 	}
 }

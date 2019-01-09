@@ -82,7 +82,7 @@ class App extends Component {
       );
 	  
 	  fetch(
-	  	'http://localhost:3000/test'
+	  	'http://192.168.0.115:5000/test'
 	  ).then(res => {
 	      if(res){
 	          const resp = res;
