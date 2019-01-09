@@ -32,22 +32,24 @@ class StartPageComponent_ extends React.Component {
 				p: 'I’m a programmer who knows design.\n' +
 					' I know best practices from both worlds and combine them\n' +
 					' in frontend development and UX/XD.\n' +
-					' I work close with designers and programmers equally.'
+					' I work close with designers and programmers. ' +
+					' I believe that communication, constructive criticism and safe team environment is the key to success.'
 			},
 			{
 				id: uuid(),
 				h: 'Full Stack',
-				p: 'I am competent in backend technologies as well as web design. I work equally well in a team or develop a project completely on my own.'
-			},
-			{
-				id: uuid(),
-				h: 'Prototyping',
-				p: 'After understanding all requirements I sketch out the first design and test it for functionality. Then I create a quick prototype. I say: "A prototype tells more than 100 sketches"'
+				p: 'I am competent in backend technologies as well as frontend and design. ' +
+					' I work equally well in a team or develop a project completely on my own.'
 			},
 			{
 				id: uuid(),
 				h: 'Process',
 				p: 'Before starting to develop I make sure I understand the needs and requirements for the project. Therefore I ask a lot of questions and interview future users.'
+			},
+			{
+				id: uuid(),
+				h: 'Prototyping',
+				p: 'After understanding all requirements I sketch out the first design and test it for functionality. Then I create a quick prototype. I say: "A prototype tells more than 100 sketches"'
 			},
 			
 		]
@@ -120,7 +122,8 @@ class StartPageComponent_ extends React.Component {
 				...s,
 				showSecondGreeting: true
 			}));
-		} else if (scrollTop < windowHeight * 2) {
+		}
+		if ( scrollTop > windowHeight * 3 - (windowHeight / 3)|| scrollTop < windowHeight * 2) {
 			this.setState(s => ({
 				...s,
 				showSecondGreeting: false
@@ -212,6 +215,10 @@ class StartPageComponent_ extends React.Component {
 				
 				<section>
 					<div className="wrapper">
+						<div className="list-title">
+							<h2>How I work</h2>
+							<h3>Development ethics</h3>
+						</div>
 						<ul className={'list'}>
 							{
 								this.state.greetingList.map(({id, h, p}, idx) => {

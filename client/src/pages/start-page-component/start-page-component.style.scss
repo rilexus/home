@@ -4,6 +4,13 @@
   height: 100%;
   width: 100%;
 
+
+  .list-title{
+    h2{
+      font-size: 1.6rem;
+      color: blue;
+    }
+  }
   .list{
     li{
       will-change: opacity, transform;
