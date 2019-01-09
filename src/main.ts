@@ -6,7 +6,9 @@ import * as path from "path";
 import {NotFoundExceptionFilter} from "./filters/NotFoundExeptionFilter";
 declare const module: any;
 
-const port = process.env.PORT || 8080;
+// const port = process.env.PORT || 8080;
+const port = 80;
+
 
 async function bootstrap() {
 	
@@ -21,7 +23,7 @@ async function bootstrap() {
 		module.hot.dispose(() => app.close());
 	}
 	
-	Logger.log(`The server is running on port: ${5000}`, `Bootstrap`);
+	Logger.log(`The server is running on port: ${port}`, `Bootstrap`);
 	Logger.log(`assets serving from: ${url}`, `Bootstrap`);
 	
 	
