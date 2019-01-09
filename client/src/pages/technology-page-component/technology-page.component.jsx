@@ -59,26 +59,6 @@ const stuff = [
 
 ];
 
-const withAnimation = (_in, appear, component, key) => {
-	return (
-		<CSSTransition
-			key={key}
-			in={_in}
-			appear={appear}
-			timeout={400}
-			classNames={'slide-animation'}
-		>
-			<div className={'slide'}>
-				{
-					<Wth3DEffect>
-						{component}
-					</Wth3DEffect>
-				}
-			</div>
-		</CSSTransition>
-	)
-};
-
 
 export class TechnologyPageComponent extends React.Component {
 	
@@ -173,9 +153,10 @@ export class TechnologyPageComponent extends React.Component {
 				
 				<PageSubtitleComponent
 					subtitle={'TOOLS'}
-					shrink={this.state.shrink}
+					//shrink={this.state.shrink}
 					comment={'I’M WORKING WITH'}
-					url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
+					//url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
+					url={'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'}
 				/>
 				
 				<PopupComponent
@@ -209,19 +190,17 @@ export class TechnologyPageComponent extends React.Component {
 						<PageContentWrapperComponent>
 							<div className="text center">
 								<h2>
-									Progress
+									Advance
 								</h2>
 								<p>
 									<a target={'_black'}
 									   href="https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html">Frontend
 										development </a>
-									is not like it was 5 years ago.
-									Technology is changing constantly!
-									With years I’ve got in touch with many different technologies and
-									tools for developing websites.
+                                    Frontend development is not like it was 5 years ago. Technology is changing constantly!
+									With years I’ve got in touch with many different technologies and tools for developing websites.
 								</p>
 								<p>
-									Every tool serves a certain purpose and solves a specific problem.
+                                    Every tool serves a certain purpose and solves a specific problem.
 									Those are my tools which help me solving mine.
 								</p>
 							</div>

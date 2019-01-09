@@ -11,6 +11,11 @@ export const textBackgroundImgStyle = (url) => {
 	}
 };
 
+export const getWindowHeight = () => {
+	const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+	return windowHeight;
+}
+
 export const lurkerFace = () => {
 	return '──────────────────────────────────\n' +
 		'─────────▄▄───────────────────▄▄──\n' +

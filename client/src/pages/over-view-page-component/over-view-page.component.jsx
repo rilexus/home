@@ -228,7 +228,8 @@ class OverViewPageComponent extends React.Component{
 												style={{
 													transitionDelay: `${25 * idx}ms`,
 													transform: hovered ? 'scale(1.1)': null,
-                                                    opacity: !hovered && this.state.mouseOnView ? .5 : null
+                                                    opacity: !hovered && this.state.mouseOnView ? .5 : null,
+													filter: `blur(${!hovered && this.state.mouseOnView ? 2 : 0}px)`
 												}}
                                                 onClick={()=>this.handleViewClick(id)}
 												key={`view_${idx}`}

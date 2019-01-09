@@ -6,81 +6,87 @@ import './about-me-page-component.style.scss';
 import {CSSTransition} from "react-transition-group";
 
 
-class AboutMePageComponent extends React.Component{
-    state = {
-
-    };
-
-    componentDidMount(){
-
-    }
-
-    render(){
-        return(
-                
-                <div className={'about-me-page-component'}>
-		            <CSSTransition
-			            in
-			            appear
-			            timeout={400}
-			            classNames={'appear-animation'}>
-			            <div className={'content-wrapper'}>
-				            
-                    <HeaderComponent/>
-                    <PageTitleComponent title={'About'} comment={''}/>
-                    <PageSubtitleComponent
-                        subtitle={'Me'}
-                        url={'https://media.giphy.com/media/26AHL0EG33tA1geoE/giphy.gif'}
-                        
-                        shrink={false}
-                        comment={''}/>
-                    
-	                
-	                <section>
-		                <div className="wrapper">
-			                <div className="text-container center">
-				                <h1 >Hello, I’m Stanislav</h1>
-				                <p>
-					                I’m a frontend developer,
-					                <strong>
-						                <a target={"_black"} href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14"> UI designer </a>
-					                </strong>
-					                and
-					                <strong><a target={"_black"} href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14"> UX geek.</a> </strong>
-					                I love creating user-centered and delightful interfaces for the web.
-				                </p>
-			                </div>
-		                </div>
-	                </section>
-                    <section>
-	                    <div className="wrapper">
-                        <div className="text-container">
-	                        <h3>My Passion</h3>
-	                        <p>
-		                        <strong>Since school</strong> i had one hobby: User Interfaces.
-		                        Even when i hadn't programing skills i dived deep in to designing mobile interfaces
-		                        with graphic editors.
-		                        To be able to inhale life in to my designs i have started studying Computer Science.
-		                        And since then i combine CS knowledge with delightfull art to create awesome UI’s.
-	                        </p>
-                        </div>
+class AboutMePageComponent extends React.Component {
+	state = {};
 	
-                        <div className="text-container">
-                            <h3>I l<span className={'icon'}>❤️</span>️ve creating things</h3>
-                            <p>
-	                            I love creating UI’s. My whole life circles around code and UI’s.
-	                            There is hardly one days when i dont code interfaces. I love what i do.
-                            </p>
-                        </div>
-	                    </div>
-                    </section>
-			            </div>
-		            </CSSTransition>
-                </div>
-        )
-    }
+	componentDidMount() {
+	
+	}
+	
+	render() {
+		return (
+			
+			<div className={'about-me-page-component'}>
+				<CSSTransition
+					in
+					appear
+					timeout={400}
+					classNames={'appear-animation'}>
+					<div className={'content-wrapper'}>
+						
+						<HeaderComponent/>
+						<PageTitleComponent title={'About'} comment={''}/>
+						<PageSubtitleComponent
+							subtitle={'Me'}
+							//url={'https://media.giphy.com/media/26AHL0EG33tA1geoE/giphy.gif'}
+							url={'https://media.giphy.com/media/3oz8xJMEOcCkYRlXVu/source.gif'}
+							
+							shrink={false}
+							comment={''}/>
+						
+						
+						<section>
+							<div className="wrapper">
+								<div className="text-container center">
+									<h1>Hello, I’m Stanislav</h1>
+									<p>
+										I’m a frontend developer,
+										<strong>
+											<a target={"_black"}
+											   href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14"> UI
+												designer </a>
+										</strong>
+										and
+										<strong><a target={"_black"}
+										           href="https://medium.freecodecamp.org/whats-the-difference-between-ux-and-ui-design-2ca8d107de14"> UX
+											geek.</a> </strong>
+										I love creating user-centered and delightful interfaces for the web.
+									</p>
+								</div>
+							</div>
+						</section>
+						
+						<section>
+							<div className="wrapper">
+								<div className="text-container">
+									<h3>My Passion</h3>
+									<p>
+										<strong>Since school</strong> i had one hobby: designing user interfaces.
+										Even when I didn't have programing skills I dived deep into designing mobile
+										interfaces with graphics editors.
+										To be able to add life into my designs I have started studying Computer Science.
+										And since then I am combining CS knowledge with delightful art to create awesome
+										UI’s.
+									</p>
+								</div>
+								
+								<div className="text-container">
+									<h3>I l<span className={'icon'}>❤️</span>️ve creating things</h3>
+									<p>
+										I love creating UI’s.
+										My whole life revolves around code and UI’s.
+										There is hardly one day when I don't code interfaces.
+										I love what I do.
+									</p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</CSSTransition>
+			</div>
+		)
+	}
 }
-
 
 
 export default AboutMePageComponent;

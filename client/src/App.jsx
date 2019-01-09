@@ -13,6 +13,7 @@ import StartPageComponent from "./pages/start-page-component/start-page.componen
 import GreetingComponent from "./pages/greeting-page-component/greeting.component";
 import CookieBannerComponent from "./shared/components/cookie-banner-component/cookie-banner.component";
 import {Switch} from "react-router-dom";
+import SlideshowPageComponent from "./pages/slideshow-page-component/slideshow-page.component";
 
 
 
@@ -53,6 +54,12 @@ export const pages = [
         id: uuid(),
         PageComponent: ContactPageComponent,
     },
+    {
+        url: '/slideshow',
+        title: 'Slideshow',
+        id: uuid(),
+        PageComponent: SlideshowPageComponent,
+    },
 ];
 
 
@@ -76,14 +83,22 @@ class App extends Component {
 	  
 	  fetch(
 	  	'http://localhost:3000/test'
-	  ).then(res => res.json()).then(d => console.log(d))
+	  ).then(res => {
+	      if(res){
+	          const resp = res;
+              console.log(resp)
+              return res;
+              //return rep.json()
+          }else {
+	          return {error: 'no response'}
+          }
+	  }).then(d => console.log())
+        .catch((er) => console.error(er))
   }
 
   render() {
     return (
         <div className="App">
-	
-	
 	        <Switch>
 		        <Route
 			        path={'/'}
@@ -116,7 +131,7 @@ class App extends Component {
             
 
             <OverViewPageComponent pages={[...this.state.pages]}/>
-            <CookieBannerComponent/>
+            {/*<CookieBannerComponent/>*/}
         </div>
     );
   }
