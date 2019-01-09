@@ -1,0 +1,18 @@
+.slideup-animation-component{
+
+
+  transform: translateY(100%);
+  transition: transform;
+  //transition-duration: set in jsx;
+  will-change: transformY;
+  &.slideup-animation-component-animation{
+    &-enter{
+      &-active{
+        transform: translateY(0);
+      }
+      &-done{
+        transform: translateY(0);
+      }
+    }
+  }
+}

@@ -11,29 +11,6 @@
 
   transition: background-color .7s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
-  .side-overlay{
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 0;
-    background-color: #f1fd16;
-    transition: width 1000ms cubic-bezier(0.19, 1, 0.22, 1), background-color 1s ;
-    &.enter{
-      &-enter{
-        &-active{
-          width: 100%;
-          background-color: transparent;
-        }
-        &-done{
-          width: 100%;
-          background-color: transparent;
-        }
-      }
-    }
-  }
-
-
   .page-wrapper{
     opacity: 0;
     transform: translate(10%, 0);

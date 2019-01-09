@@ -43,9 +43,10 @@ class ContactPageComponent extends React.Component{
 						<PageTitleComponent
 							title={this.props.title} comment={''}/>
 						<PageSubtitleComponent
-							subtitle={'CALL ME'}
+							subtitle={'MAIL ME'}
 							comment={'let’s chat'}
-							url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
+							//url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
+							url={'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'}
 							shrink={this.state.minify}
 						/>
 						
@@ -61,8 +62,8 @@ class ContactPageComponent extends React.Component{
 											Let’s talk about UI
 										</h2>
 										<p>
-											If you have a project in mind lets chat about it.
-											I will be happy to hear you ideas and giving you advice on best practices.
+                                            If you have a project in mind let's chat about it.
+											I will be happy to hear your ideas and give you feedback on best practices.
 										</p>
 										<a href="mailto:mail@stanislavpanchenko.de">mail@stanislavpanchenko.de</a>
 									</div>

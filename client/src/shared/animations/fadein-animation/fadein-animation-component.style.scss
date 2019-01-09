@@ -1,0 +1,18 @@
+.fadein-animation-wrapper{
+
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity;
+  //transition-duration: 2000ms;
+  &.fadein-animation{
+   &-enter{
+     &-active{
+       opacity: 1;
+     }
+     &-done{
+       opacity: 1;
+     }
+   }
+  }
+
+}

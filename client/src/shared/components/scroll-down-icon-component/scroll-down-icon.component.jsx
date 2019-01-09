@@ -7,12 +7,15 @@ const ScrollDownIconComponent = ({fade}) => {
 
     return (
         <CSSTransition
-            in
+            in={!fade}
             appear
             classNames={'mouse-container-animation'}
             timeout={400}
         >
-            <div className={['mouse-container', fade ? 'hidden' : ''].join(' ')}>
+            <div className={[
+                'mouse-container',
+                // fade ? 'hidden' : ''
+            ].join(' ')}>
                 <div className='mouse'>
                     <span className='scroll-down'/>
                 </div>
