@@ -9,7 +9,8 @@ export class AppController {
   @Get()
   root(@Res() res){
 	  //res.sendFile(path.resolve('build/index.html'));
-	  res.sendFile("index.html");
+	  //res.sendFile("index.html");
+	  res.sendFile(__dirname + '/index.html');
   }
 	
 	@Get('/test')
