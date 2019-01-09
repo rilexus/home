@@ -10,6 +10,8 @@
 
 # production
 /build
+/dist
+!/dist/server.js
 /client/build
 
 # misc
