@@ -89,12 +89,12 @@ const svgs = [
 const UnfoldComponent = ({delay, onClick, onMouseEnter, onMouseLeave}) => {
 	return (
 		<CSSTransition
-			classNames={'scroll-animation'}
+			classNames={'unfold-animation'}
 			timeout={500}
 			in
 			appear
 		>
-			<div className="scroll">
+			<div className="unfold">
 				<ul>
 					{
 						svgs.map(({name, Component, url}, idx) => {

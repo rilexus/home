@@ -10,6 +10,8 @@
   transition: opacity .4s, transform 0.4s;
   transform: translate(-20%, 0);
 
+  will-change: opacity, transform;
+
   span{
     font-weight: 200;
     font-size: 2rem;

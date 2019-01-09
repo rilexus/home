@@ -18,11 +18,14 @@
     cursor: pointer;
     transition: transform 200ms;
     transform: scale(1);
+
     &:hover{
       transform: scale(.95);
     }
   }
-
+  .over-view{
+    will-change: opacity;
+  }
   .over-view{
     position: absolute;
     top: 0;
@@ -46,6 +49,9 @@
     .title-wrapper{
       margin-top: 30vh;
       position: relative;
+      .title{
+        will-change: transform, opacity;
+      }
       .title{
         font-size: 2rem;
         padding-left: 15rem;
@@ -96,6 +102,9 @@
       display: flex;
       justify-content: center;
 
+      .view{
+        will-change: border-radius, opacity, transform;
+      }
       .view{
         flex-grow: 1;
         flex-basis: 0;

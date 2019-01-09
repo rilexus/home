@@ -77,7 +77,8 @@ class StartPageComponent_ extends React.Component {
 				<PageTitleComponent title={this.props.title} comment={''}/>
 				<PageSubtitleComponent
 					subtitle={'UX&UI'}
-					url={'https://media.giphy.com/media/3oz8xTZLNWZ3W660bC/giphy.gif'}
+					//url={'https://media.giphy.com/media/3oz8xTZLNWZ3W660bC/giphy.gif'}
+					url={'https://media.giphy.com/media/3o6ZtpKpayDeYGV0Uo/source.gif'}
 					comment={'WITH PASSION FOR DESIGN'}
 				/>
 				<ScrollDownIconComponent fade={this.state.mouseVisible}/>

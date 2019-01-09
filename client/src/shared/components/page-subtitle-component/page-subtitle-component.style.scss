@@ -41,6 +41,9 @@ section.page-subtitle{
   @media only screen and (max-width: 980px) {
     width: 100%;
   }
+  .subtitle-wrapper{
+    will-change: transform, top, margin-top, font-size;
+  }
 
   .subtitle-wrapper{
     transition:

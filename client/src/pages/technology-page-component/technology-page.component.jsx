@@ -59,26 +59,6 @@ const stuff = [
 
 ];
 
-const withAnimation = (_in, appear, component, key) => {
-	return (
-		<CSSTransition
-			key={key}
-			in={_in}
-			appear={appear}
-			timeout={400}
-			classNames={'slide-animation'}
-		>
-			<div className={'slide'}>
-				{
-					<Wth3DEffect>
-						{component}
-					</Wth3DEffect>
-				}
-			</div>
-		</CSSTransition>
-	)
-};
-
 
 export class TechnologyPageComponent extends React.Component {
 	
@@ -175,7 +155,8 @@ export class TechnologyPageComponent extends React.Component {
 					subtitle={'TOOLS'}
 					shrink={this.state.shrink}
 					comment={'I’M WORKING WITH'}
-					url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
+					//url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
+					url={'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'}
 				/>
 				
 				<PopupComponent

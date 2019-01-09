@@ -99,8 +99,6 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-	
-	
 	        <Switch>
 		        <Route
 			        path={'/'}
@@ -133,7 +131,7 @@ class App extends Component {
             
 
             <OverViewPageComponent pages={[...this.state.pages]}/>
-            <CookieBannerComponent/>
+            {/*<CookieBannerComponent/>*/}
         </div>
     );
   }
