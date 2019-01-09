@@ -1,14 +1,14 @@
 @import "../../../style/utils/mixins";
 
 $animation-time: 1s;
-section.page-subtitle{
+.page-subtitle{
   width: 80%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   height: 50vh;
   transition: height $animation-time, transform $animation-time;
-  overflow: hidden;
+  //overflow: hidden;
 
 
   &.shrink{
@@ -46,6 +46,11 @@ section.page-subtitle{
   }
 
   .subtitle-wrapper{
+    //position: sticky;
+    //top: 100px;
+    //margin-bottom: 250px;
+
+    //opacity: 0;
     transition:
             transform 400ms,
             font-size $animation-time,
@@ -64,6 +69,15 @@ section.page-subtitle{
           transform: scaleY(1);
         }
       }
+      &-exite{
+        &-active{
+          transform: scaleY(1);
+        }
+        &-done{
+          transform: scaleY(1);
+        }
+      }
+
 
     }
 

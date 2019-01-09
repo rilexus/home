@@ -153,7 +153,7 @@ export class TechnologyPageComponent extends React.Component {
 				
 				<PageSubtitleComponent
 					subtitle={'TOOLS'}
-					shrink={this.state.shrink}
+					//shrink={this.state.shrink}
 					comment={'I’M WORKING WITH'}
 					//url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
 					url={'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'}
@@ -190,7 +190,7 @@ export class TechnologyPageComponent extends React.Component {
 						<PageContentWrapperComponent>
 							<div className="text center">
 								<h2>
-									Progress
+									Advance
 								</h2>
 								<p>
 									<a target={'_black'}

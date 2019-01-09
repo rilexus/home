@@ -11,7 +11,8 @@ const WordUnfoldComponent = ({word, delay, in_}) => {
             classNames={'word-unfold-animation'}
             timeout={100}
             in={in_}
-            appear>
+            appear
+        >
 
             <span className={'word-unfold-component'}>
             {
@@ -25,6 +26,7 @@ const WordUnfoldComponent = ({word, delay, in_}) => {
                         </span>
                     )
                 })
+                
             }
         </span>
         </CSSTransition>

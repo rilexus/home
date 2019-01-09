@@ -1,8 +1,9 @@
 import React from 'react';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import {CSSTransition} from 'react-transition-group';
 import './slideshow-page-component.style.scss';
 import HeaderComponent from "../../shared/components/page-header-component/header.component";
 import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
+import {getWindowHeight} from "../../shared/utils";
 
 
 class SlideshowPageComponent extends React.Component {
@@ -19,7 +20,8 @@ class SlideshowPageComponent extends React.Component {
 	
 	componentDidMount() {
 		//const wrapperHeight = this.componentRef.current.getBoundingClientRect();
-		const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		//const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		const windowHeight = getWindowHeight();
 		this.setState(s => ({
 			...s,
 			//  wrapperHeight: wrapperHeight,

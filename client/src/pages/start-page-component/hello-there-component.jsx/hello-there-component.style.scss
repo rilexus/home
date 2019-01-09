@@ -1,0 +1,34 @@
+.hello-there-component{
+  position: relative;
+  .hello-there-text{
+    text-align: center;
+  }
+
+  .hello-there-view{
+    position: absolute;
+    background-color: black;
+    left: 50%;
+    transform: translate(-50%);
+
+    $animation-time: 1000ms;
+    will-change: opacity, width, height;
+    width: 0;
+    height: 0;
+    transition: height $animation-time, width $animation-time, opacity $animation-time;
+
+    &.hello-there-view-animation{
+      &-enter{
+        &-active{
+          opacity: 1;
+          width: 100%;
+          height: 5px;
+        }
+        &-done{
+          opacity: 1;
+          width: 100%;
+          height: 5px;
+        }
+      }
+    }
+  }
+}
