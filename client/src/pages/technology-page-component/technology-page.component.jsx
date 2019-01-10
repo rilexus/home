@@ -192,7 +192,7 @@ export class TechnologyPageComponent extends React.Component {
 									<a target={'_black'}
 									   href="https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html">Frontend
 										development </a>
-                                    Frontend development is not like it was 5 years ago. Technology is changing constantly!
+                                    is not like it was 5 years ago. Technology is changing constantly!
 									With years I’ve got in touch with many different technologies and tools for developing websites.
 								</p>
 								<p>

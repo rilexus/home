@@ -61,12 +61,13 @@ class AboutMePageComponent extends React.Component {
 								<div className="text-container">
 									<h3>My Passion</h3>
 									<p>
-										<strong>Since school</strong> i had one hobby: designing user interfaces.
-										Even when I didn't have programing skills I dived deep into designing mobile
-										interfaces with graphics editors.
-										To be able to add life into my designs I have started studying Computer Science.
-										And since then I am combining CS knowledge with delightful art to create awesome
-										UI’s.
+										<strong>Since school</strong> I had one hobby: designing user interfaces.
+										Even when I didn't have programing skills,
+										I dived deep into designing mobile interfaces with graphics editors.
+										To be able to add life into my designs,
+										I have started studying Computer Science.
+										And since then,
+										I am combining CS knowledge with delightful art to create awesome UI’s.
 									</p>
 								</div>
 								

@@ -33,7 +33,7 @@ class StartPageComponent_ extends React.Component {
 					' I know best practices from both worlds and combine them\n' +
 					' in frontend development and UX/XD.\n' +
 					' I work close with designers and programmers. ' +
-					' I believe that communication, constructive criticism and safe team environment is the key to success.'
+					' I believe that communication, constructive criticism a safe team environment are the keys to success.'
 			},
 			{
 				id: uuid(),
@@ -143,7 +143,7 @@ class StartPageComponent_ extends React.Component {
 					<div className="wrapper">
 						<div className="list-title">
 							<h2>How I work</h2>
-							<h3>Development ethics</h3>
+							<h3>Development process</h3>
 						</div>
 						<ul className={'list'}>
 							{
@@ -199,7 +199,7 @@ class StartPageComponent_ extends React.Component {
 							</p>
 							<p>
 								I’m always excited to start new projects! If you have ideas, let’s chat about it.
-								<Link to={'/contact'}> Drop me a message </Link> and lets
+								<Link to={'/contact'}> Drop me a message </Link> and let’s
 								create <strong> awesome</strong> sites.
 							</p>
 						</div>
