@@ -8,6 +8,9 @@ import {BioComponent} from "../bio-page-component/bio.component";
 import {withRouter} from "react-router-dom";
 import StartPageComponent from "../start-page-component/start-page.component";
 import PopupComponent from "../../shared/components/popup-component/popup.component";
+import HeaderComponent from "../../shared/components/page-header-component/header.component";
+import PageTitleComponent from "../../shared/components/page-title-component/page-title.component";
+import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
 
 
 
@@ -221,31 +224,40 @@ class OverViewPageComponent extends React.Component{
 							classNames={'views-animation'}
 						>
 							<div className="views">
-								
+								<div className="scrolling-wrapper">
 									{
-										this.state.views.map(({PageComponent,title, id, hovered}, idx) => {
+										this.state.views.map(({PageComponent,title, id, hovered, url, subtitle, imgUrl, comment}, idx,) => {
 											return(
 												<div className={'view'}
-													style={{
-														transitionDelay: `${25 * idx}ms`,
-														// transform: hovered ? 'scale(1.07)': null,
-														opacity: !hovered && this.state.mouseOnView ? .5 : null,
-														// filter: `blur(${!hovered && this.state.mouseOnView ? 2 : 0}px)`
-													}}
-													onClick={()=>this.handleViewClick(id)}
-													key={`view_${idx}`}
-													onMouseEnter={() => this.handleMouseEnterOnView(id)}
-													onMouseLeave={() => this.handleMouseLeaveOnView(id)}
+												     style={{
+													     transitionDelay: `${50 * idx}ms`,
+													     transform: `translateX(-${32 * idx}%) ${hovered ? 'scale(.74)': 'scale(.7)'}`,
+													     opacity: !hovered && this.state.mouseOnView ? .5 : null,
+													     // filter: `blur(${!hovered && this.state.mouseOnView ? 2 : 0}px)`
+												     }}
+												     onClick={()=>this.handleViewClick(id)}
+												     key={`view_${idx}`}
+												     onMouseEnter={() => this.handleMouseEnterOnView(id)}
+												     onMouseLeave={() => this.handleMouseLeaveOnView(id)}
 												>
 													<div className="view-content">
-														<PageComponent/>
+														{/*<PageComponent/>*/}
+														<div>
+															<HeaderComponent/>
+															<PageTitleComponent title={title} comment={''}/>
+															<PageSubtitleComponent
+																subtitle={subtitle}
+																url={imgUrl}
+																comment={comment}
+															/>
+														</div>
 														<div className="overlay"/>
 													</div>
 												</div>
 											)
 										})
 									}
-								
+								</div>
 							</div>
 						</CSSTransition>
 					</div>

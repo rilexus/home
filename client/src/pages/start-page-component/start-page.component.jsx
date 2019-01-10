@@ -127,9 +127,9 @@ class StartPageComponent_ extends React.Component {
 					<PageTitleComponent title={this.props.title} comment={''}/>
 					<FadeinAnimationComponent duration={1000} timeout={200} _in={this.state.subtitle}>
 						<PageSubtitleComponent
-							subtitle={'UX&UI'}
-							url={'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'}
-							comment={'WITH PASSION FOR DESIGN'}
+							subtitle={this.props.subtitle}
+							url={this.props.imgUrl}
+							comment={this.props.comment}
 						/>
 					</FadeinAnimationComponent>
 				</section>

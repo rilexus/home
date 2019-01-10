@@ -153,9 +153,9 @@ export class TechnologyPageComponent extends React.Component {
                 <PageTitleComponent title={this.props.title} comment={''}/>
 
                 <PageSubtitleComponent
-                    subtitle={'TOOLS'}
-                    comment={'I’M WORKING WITH'}
-                    url={'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'}
+	                subtitle={this.props.subtitle}
+	                url={this.props.imgUrl}
+	                comment={this.props.comment}
                 />
 
 				<PopupComponent

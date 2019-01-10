@@ -27,12 +27,12 @@ class AboutMePageComponent extends React.Component {
 						<HeaderComponent/>
 						<PageTitleComponent title={'About'} comment={''}/>
 						<PageSubtitleComponent
-							subtitle={'Me'}
-							//url={'https://media.giphy.com/media/26AHL0EG33tA1geoE/giphy.gif'}
-							url={'https://media.giphy.com/media/3oz8xJMEOcCkYRlXVu/source.gif'}
+							subtitle={this.props.subtitle}
+							url={this.props.imgUrl}
+							comment={this.props.comment}
 							
 							shrink={false}
-							comment={''}/>
+						/>
 						
 						
 						<section>
