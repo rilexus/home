@@ -86,10 +86,13 @@ $animation-time: 1s;
       color: #dedede;
       font-size: 7rem;
       display: inline-block;
-      padding: { // stretch the gif animation
-        left: 120px;
-        right: 120px;
-      };
+
+      // stretch the gif animation
+      //padding: {
+      //  left: 120px;
+      //  right: 120px;
+      //};
+
       text-align: center;
       transition: font-size $animation-time, left $animation-time;
     }

@@ -197,19 +197,19 @@ class OverViewPageComponent extends React.Component{
                                     })
                                 }
                             </TransitionGroup>
-                            <CSSTransition
+                            
+	                        <CSSTransition
                                 in={this.state.defaultTitleVisible}
                                 appear
                                 mountOnEnter
                                 unmountOnExit
                                 timeout={800}
-                                classNames={'title-animation'}
-                            >
-                                <div className="title">
-                                    {this.getDefaultTitle()}
-                                    </div>
+                                classNames={'title-animation'}>
+	                                <div className="title">
+                                        {this.getDefaultTitle()}
+                                     </div>
                             </CSSTransition>
-                         
+	                        
                         </div>
 
 						<CSSTransition
@@ -221,28 +221,31 @@ class OverViewPageComponent extends React.Component{
 							classNames={'views-animation'}
 						>
 							<div className="views">
-								{
-									this.state.views.map(({PageComponent,title, id, hovered}, idx) => {
-										return(
-											<div
-												style={{
-													transitionDelay: `${25 * idx}ms`,
-													transform: hovered ? 'scale(1.1)': null,
-                                                    opacity: !hovered && this.state.mouseOnView ? .5 : null,
-													filter: `blur(${!hovered && this.state.mouseOnView ? 2 : 0}px)`
-												}}
-                                                onClick={()=>this.handleViewClick(id)}
-												key={`view_${idx}`}
-												className={'view'}
-												onMouseEnter={() => this.handleMouseEnterOnView(id)}
-												onMouseLeave={() => this.handleMouseLeaveOnView(id)}
-											>
-                                                <PageComponent/>
-                                                <div className="overlay"/>
-											</div>
-										)
-									})
-								}
+								
+									{
+										this.state.views.map(({PageComponent,title, id, hovered}, idx) => {
+											return(
+												<div className={'view'}
+													style={{
+														transitionDelay: `${25 * idx}ms`,
+														// transform: hovered ? 'scale(1.07)': null,
+														opacity: !hovered && this.state.mouseOnView ? .5 : null,
+														// filter: `blur(${!hovered && this.state.mouseOnView ? 2 : 0}px)`
+													}}
+													onClick={()=>this.handleViewClick(id)}
+													key={`view_${idx}`}
+													onMouseEnter={() => this.handleMouseEnterOnView(id)}
+													onMouseLeave={() => this.handleMouseLeaveOnView(id)}
+												>
+													<div className="view-content">
+														<PageComponent/>
+														<div className="overlay"/>
+													</div>
+												</div>
+											)
+										})
+									}
+								
 							</div>
 						</CSSTransition>
 					</div>
