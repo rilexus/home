@@ -54,7 +54,7 @@ class StartPageComponent_ extends React.Component {
 			
 		]
 	};
-	
+
 	componentDidMount() {
 		const windowHeight = getWindowHeight();
 		this.setState(s => ({
@@ -62,14 +62,8 @@ class StartPageComponent_ extends React.Component {
 			windowHeight: windowHeight
 		}));
 	}
-	
-	hideGreeting() {
-		this.setState(s => ({
-			...s,
-			showGreeting: false
-		}));
-	}
-	
+
+
 	handleMouseIcon(scrollTop) {
 		if (scrollTop > 150) {
 			this.setState(s => ({
@@ -99,46 +93,16 @@ class StartPageComponent_ extends React.Component {
 		}
 	}
 	
-	handleGreeting(scrollTop) {
-		const windowHeight = this.state.windowHeight;
-		if (scrollTop > (windowHeight / 2) - 120) {
-			this.setState(s => ({
-				...s,
-				showGreeting: true
-			}));
-		}
-		if (scrollTop < windowHeight || scrollTop > windowHeight + (windowHeight / 2)) {
-			this.setState(s => ({
-				...s,
-				showGreeting: false
-			}));
-		}
-	}
-	
-	handleSecondGreeting(scrollTop) {
-		const windowHeight = this.state.windowHeight;
-		if (scrollTop > windowHeight * 2) {
-			this.setState(s => ({
-				...s,
-				showSecondGreeting: true
-			}));
-		}
-		if ( scrollTop > windowHeight * 3 - (windowHeight / 3)|| scrollTop < windowHeight * 2) {
-			this.setState(s => ({
-				...s,
-				showSecondGreeting: false
-			}));
-		}
-	}
+
 	
 	handleList(scrollTop) {
 		const windowHeight = this.state.windowHeight;
-		if (scrollTop > (windowHeight * 3) - 200) {
+		if (scrollTop > (windowHeight) - 200) {
 			this.setState(s => ({
 				...s,
 				listVisible: true
 			}));
-		} else if (scrollTop < windowHeight * 3) {
+		} else if (scrollTop < windowHeight) {
 			this.setState(s => ({
 				...s,
 				listVisible: false
@@ -149,10 +113,6 @@ class StartPageComponent_ extends React.Component {
 	handleScroll(scrollTop) {
 		this.handleMouseIcon(scrollTop);
 		this.handleSubtitle(scrollTop);
-		this.handleGreeting(scrollTop);
-		
-		this.handleSecondGreeting(scrollTop);
-		
 		this.handleList(scrollTop);
 		
 	}
@@ -176,38 +136,7 @@ class StartPageComponent_ extends React.Component {
 				<section>
 					<ScrollDownIconComponent fade={!this.state.mouseVisible}/>
 				</section>
-				
-				
-				<section className={'greet'}>
-					<div className="sticky">
-						<FadeinAnimationComponent
-							timeout={200}
-							duration={1300}
-							_in={this.state.showGreeting}>
-							<HelloThereComponent showView={this.state.showGreeting}/>
-						</FadeinAnimationComponent>
-					</div>
-				</section>
-				
-				<section className={'greet'}>
-					<div className="text-container">
-						<SlideupAnimationComponent
-							_in={this.state.showSecondGreeting}
-							duration={2000}>
-							<FadeinAnimationComponent
-								timeout={1000}
-								duration={2000}
-								_in={this.state.showSecondGreeting}>
-								<h2>
-									Creating magic
-								</h2>
-								<p>
-									Building beautiful sites is my passion.
-								</p>
-							</FadeinAnimationComponent>
-						</SlideupAnimationComponent>
-					</div>
-				</section>
+
 				
 				
 				<section>

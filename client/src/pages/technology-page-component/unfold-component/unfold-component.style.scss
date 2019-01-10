@@ -1,15 +1,17 @@
 @import "../../../style/utils/mixins";
 
 .unfold{
-  overflow-x: scroll;
   position: relative;
-  padding-bottom: 30px;
-
+  height: 70px;
+  overflow: hidden;
   ul{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    height: 90px;
 
     li{
       display: inline-block;
@@ -19,6 +21,7 @@
       text-align: center;
       transform: translate(0, -10%) scale(.9);
       will-change: transform, opacity;
+      padding-top: 10px;
 
       margin: {
         left: 25px;

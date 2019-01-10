@@ -98,7 +98,7 @@ class App extends Component {
 
   render() {
     return (
-        <div className="App">
+        <div className='App'>
 	        <Switch>
 		        <Route
 			        path={'/'}
@@ -118,9 +118,9 @@ class App extends Component {
 						        path={url}
 						        exact
 						        render={()=>(
-							        <FullViewComponent>
-								        <PageComponent title={title}/>
-							        </FullViewComponent>
+						            //<FullViewComponent>
+								        <PageComponent scrollTop={this.scrollTop} title={title}/>
+							        //</FullViewComponent>
 						        )}
 					        />
 				        );
@@ -128,7 +128,7 @@ class App extends Component {
 		        }
 		        <Redirect to="/start" />
 	        </Switch>
-            
+
 
             <OverViewPageComponent pages={[...this.state.pages]}/>
             {/*<CookieBannerComponent/>*/}

@@ -139,26 +139,25 @@ export class TechnologyPageComponent extends React.Component {
 			     onScroll={(e) => this.handleScroll(e.target.scrollTop)}
 			     style={{backgroundColor: this.state.bgColor}}>
 				
-				<CSSTransition
-					in
-					appear
-					timeout={200}
-					classNames={'enter'}
-					onEntered={() => this.showContent()}
-				>
-					<div className={'side-overlay'}/>
-				</CSSTransition>
-				<HeaderComponent/>
-				<PageTitleComponent title={this.props.title} comment={''}/>
-				
-				<PageSubtitleComponent
-					subtitle={'TOOLS'}
-					//shrink={this.state.shrink}
-					comment={'I’M WORKING WITH'}
-					//url={'https://media.giphy.com/media/26FPq8u5gvYO9GzoA/giphy.gif'}
-					url={'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'}
-				/>
-				
+				{/*<CSSTransition*/}
+					{/*in*/}
+					{/*appear*/}
+					{/*timeout={200}*/}
+					{/*classNames={'side-overlay-animation'}*/}
+					{/*onEntered={() => this.showContent()}*/}
+				{/*>*/}
+					{/*<div className={'side-overlay'}/>*/}
+				{/*</CSSTransition>*/}
+
+                <HeaderComponent/>
+                <PageTitleComponent title={this.props.title} comment={''}/>
+
+                <PageSubtitleComponent
+                    subtitle={'TOOLS'}
+                    comment={'I’M WORKING WITH'}
+                    url={'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'}
+                />
+
 				<PopupComponent
 					visible={this.state.showPopup}
 					top={this.state.popupPosition.top}
@@ -168,14 +167,11 @@ export class TechnologyPageComponent extends React.Component {
 					fromTop
 				/>
 				<CSSTransition
-					in={this.state.showContent}
+					in
 					appear
 					timeout={400}
-					classNames={'anim'}
-				>
-					
+					classNames={'page-wrapper-animation'}>
 					<div className="page-wrapper">
-						
 						<section className={'tech'}>
 							<div className="tech-titles">
 								<UnfoldComponent
