@@ -93,9 +93,10 @@ class SlideshowPageComponent extends React.Component {
 					<div className="slide-show-component-content">
 						<div className="sub">
 							<PageSubtitleComponent
-								shrink={false} comment={''}
-								subtitle={'Slide'}
-								url={'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'}
+								shrink={false}
+								subtitle={this.props.subtitle}
+								url={this.props.imgUrl}
+								comment={this.props.comment}
 							/>
 						</div>
 						{/*first section is 200vh heigh*/}

@@ -14,6 +14,7 @@ import GreetingComponent from "./pages/greeting-page-component/greeting.componen
 import CookieBannerComponent from "./shared/components/cookie-banner-component/cookie-banner.component";
 import {Switch} from "react-router-dom";
 import SlideshowPageComponent from "./pages/slideshow-page-component/slideshow-page.component";
+import PageSubtitleComponent from "./shared/components/page-subtitle-component/page-subtitle.component";
 
 
 
@@ -25,10 +26,14 @@ export const pages = [
     //     PageComponent: GreetingComponent,
     // },
     {
-        url: '/start',
-        title: 'Start',
         id: uuid(),
         PageComponent: StartPageComponent,
+	    
+        url: '/start',
+        title: 'Start',
+	    subtitle: 'UX&UI',
+	    imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif',
+	    comment: 'WITH PASSION FOR DESIGN',
     },
     // {
     //     url: '/bio',
@@ -37,28 +42,44 @@ export const pages = [
     //     PageComponent: BioComponent,
     // },
     {
-        url: '/technology',
-        title: 'Technology',
         id: uuid(),
         PageComponent: TechnologyPageComponent,
+	    
+        url: '/technology',
+        title: 'Technology',
+	    subtitle:'TOOLS',
+	    comment: 'I’M WORKING WITH',
+	    imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif',
     },
     {
-        url: '/about',
-        title: 'About',
         id: uuid(),
         PageComponent: AboutMePageComponent,
+	    
+        url: '/about',
+        title: 'About',
+	    subtitle: 'Me',
+	    imgUrl: 'https://media.giphy.com/media/3oz8xJMEOcCkYRlXVu/source.gif',
+	    comment: ''
     },
     {
-        url: '/contact',
-        title: 'Contact',
         id: uuid(),
         PageComponent: ContactPageComponent,
+	    
+        url: '/contact',
+        title: 'Contact',
+	    subtitle: 'MAIL ME',
+	    comment: 'let’s chat',
+	    imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'
     },
     {
-        url: '/slideshow',
-        title: 'Slideshow',
         id: uuid(),
         PageComponent: SlideshowPageComponent,
+	    
+        url: '/slideshow',
+        title: 'Slideshow',
+	    comment: '',
+	    subtitle: 'Slide',
+	    imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'
     },
 ];
 
@@ -98,7 +119,7 @@ class App extends Component {
 
   render() {
     return (
-        <div className="App">
+        <div className='App'>
 	        <Switch>
 		        <Route
 			        path={'/'}
@@ -111,16 +132,21 @@ class App extends Component {
 		        />
 		
 		        {
-			        this.state.pages.map(({url, title, PageComponent}) => {
+			        pages.map((page) => {
+			        	const {title, subtitle, url, PageComponent, imgUrl, comment} = page;
 				        return(
 					        <Route
 						        key={`page-component:${title}`}
 						        path={url}
 						        exact
 						        render={()=>(
-							        <FullViewComponent>
-								        <PageComponent title={title}/>
-							        </FullViewComponent>
+						        	<PageComponent
+								        title={title}
+								        imgUrl={imgUrl}
+								        url={url}
+								        comment={comment}
+								        subtitle={subtitle}
+							        />
 						        )}
 					        />
 				        );
@@ -128,9 +154,9 @@ class App extends Component {
 		        }
 		        <Redirect to="/start" />
 	        </Switch>
-            
 
-            <OverViewPageComponent pages={[...this.state.pages]}/>
+
+            <OverViewPageComponent pages={[...pages]}/>
             {/*<CookieBannerComponent/>*/}
         </div>
     );

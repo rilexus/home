@@ -11,6 +11,29 @@
 
   transition: background-color .7s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
+  .side-overlay{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    opacity: 1;
+    background: linear-gradient(to right, rgb(237, 127, 217) 0%,rgba(229,229,229,0) 100%);
+    transition: width 400ms, opacity 700ms;
+    &.side-overlay-animation{
+      &-enter{
+        &-active{
+          width: 100%;
+          opacity: 0;
+        }
+        &-done{
+          width: 100%;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
   .page-wrapper{
     opacity: 0;
     transform: translate(10%, 0);
@@ -18,7 +41,7 @@
     height: 100%;
     position: relative;
 
-    &.anim{
+    &.page-wrapper-animation{
       &-enter{
         &-active{
           opacity: 1;
@@ -46,10 +69,9 @@
 
     section.tech{
       position: relative;
-
       .tech-titles{
-        height: 70px;
-        overflow-y: hidden;
+        //height: 70px;
+        //overflow-y: hidden;
         margin-top: 10vh;
       }
 

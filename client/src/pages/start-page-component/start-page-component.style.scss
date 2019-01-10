@@ -1,3 +1,6 @@
+@import "../../style/utils/vars";
+
+
 .start-page-component {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -30,12 +33,16 @@
 
     li{
       list-style: none;
-      width: 46%;
       margin-bottom: 5vh;
 
       opacity: 0;
       transform: translate(0, 25%);
       transition: opacity 1000ms, transform 700ms;
+
+      @media screen and (min-width: $ipad) { // iphone plus
+        width: 48%;
+      }
+
       &.li-animation{
         &-enter{
           &-active{
