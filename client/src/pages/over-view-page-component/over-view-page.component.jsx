@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup} from 'react-transition-group';
 import uuid from 'uuid';
 import {TechnologyPageComponent} from "../technology-page-component/technology-page.component";
 import ContactPageComponent from "../contact-page-component/contact-page.component";
-import {BioComponent} from "../bio-page-component/bio.component";
+import {BioPageComponent} from "../bio-page-component/bio-page.component";
 import {withRouter} from "react-router-dom";
 import StartPageComponent from "../start-page-component/start-page.component";
 import PopupComponent from "../../shared/components/popup-component/popup.component";
