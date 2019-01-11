@@ -6,6 +6,8 @@ import PageSubtitleComponent from "../../shared/components/page-subtitle-compone
 import PageTitleComponent from "../../shared/components/page-title-component/page-title.component";
 import PopinComponent from "../../shared/components/popin-component/popin.component";
 import LockIconComponent from "../../shared/icons/lock-icon.component";
+import FadeinAnimationComponent from "../../shared/animations/fadein-animation/fadein-animation.component";
+import SlideupAnimationComponent from "../../shared/animations/slideup-animation/slideup-animation.component";
 
 
 export class BioPageComponent extends React.Component{
@@ -28,22 +30,22 @@ export class BioPageComponent extends React.Component{
 			openPopin: true
 		}))
 	}
-
+	getPopinState(){
+		return this.state.openPopin;
+	}
+	
+	setPopinState(state){
+		if(this.getPopinState() === state){
+			return;
+		}
+		this.setState(s => ({
+			...s,
+			openPopin: state
+		}))
+	}
+	
 	closePopin(e){
-		// if(this.state.openPopin){
-		// 	const isBio = e.target.className.includes('bio-page-component');
-		// 	if(isBio){
-		// 		this.setState(s => ({
-		// 			...s,
-		// 			openPopin: false
-		// 		}))
-		// 	}
-		// }
-
-        this.setState(s => ({
-            ...s,
-            openPopin: false
-        }))
+        this.setPopinState(false);
     }
 
 
@@ -63,33 +65,48 @@ export class BioPageComponent extends React.Component{
                         subtitle={this.props.subtitle}/>
 
                     <div className="wrapper">
-                        <div className="text-container center">
-                            <div className="text-title">
-                                <h2>
-                                    Full CV
-                                </h2>
-                                <h3>
-                                    Download
-                                </h3>
-                            </div>
-                            <p>
-                                You can download my full CV here
-                            </p>
-                            <div className="download-button-wrapper">
-                                <button
-                                    onClick={()=>this.openPopin()}
-                                    className={'download-button'}>
-                                    <LockIconComponent/>
-                                    Download
-                                </button>
-                            </div>
-                        </div>
+	                    <SlideupAnimationComponent timeout={200} _in={true} duration={700}>
+		                    <FadeinAnimationComponent duration={1200} _in={true} timeout={400}>
+			                    <div className="text-container center">
+				                    <div className="text-title">
+					                    <h2>
+						                    Full CV
+					                    </h2>
+					                    <h3>
+						                    Download
+					                    </h3>
+				                    </div>
+				                    <p>
+					                    You can download my full CV here
+				                    </p>
+				                    <div className="download-button-wrapper">
+					                    <button
+						                    onClick={()=>this.openPopin()}
+						                    className={'download-button'}>
+						                    <LockIconComponent/>
+						                    Download
+					                    </button>
+				                    </div>
+			                    </div>
+		                    </FadeinAnimationComponent>
+	                    </SlideupAnimationComponent>
                     </div>
 				</div>
 				<PopinComponent in_={this.state.openPopin} onClick={(e)=>this.closePopin(e)}>
-					<div className={'center'}>
-						<h2>Password required!</h2>
-						<p>please enter the provided password</p>
+					<div className="password-wrapper">
+						<div className={'center'}>
+							<h2>Password required!</h2>
+							<p>please enter the provided password</p>
+						</div>
+						<div className="password-field">
+							<input className={'number-input'} type="number"/>
+							<input className={'number-input'} type="number"/>
+							<input className={'number-input'} type="number"/>
+							<input className={'number-input'} type="number"/>
+						</div>
+						<div className="send-button-wrapper">
+							<button>Download</button>
+						</div>
 					</div>
 				</PopinComponent>
 			</div>

@@ -14,7 +14,7 @@
     position: absolute;
 
     opacity: 0;
-    transition: opacity 600ms;
+    transition: opacity 400ms;
     &.popin-bg-appear-animation{
       &-enter{
         &-active{
@@ -37,7 +37,7 @@
   }
 
   .popin{
-    $appear-animation-time: 400ms;
+    $appear-animation-time: 900ms;
     transform-origin: 50% 50%;
     width: 50%;
     height: 50%;
@@ -47,9 +47,11 @@
     left: 50%;
     position: absolute;
     box-shadow: 0px 33px 130px 0px rgba(0, 0, 0, 0.27);
-    transform: scale(.75) translate(-70%, -30%);
+    transform: scale(.75) translate(-65%, -60%);
     opacity: 0;
-    transition: opacity $appear-animation-time cubic-bezier(1, 0, 0, 1), transform $appear-animation-time cubic-bezier(1, 0, 0, 1);
+    transition:
+            opacity $appear-animation-time cubic-bezier(0.075, 0.82, 0.165, 1),
+            transform $appear-animation-time cubic-bezier(0.075, 0.82, 0.165, 1);
     will-change: opacity, transform;
     border-radius: 10px;
 

@@ -20,7 +20,7 @@ class PopinComponent extends React.Component{
                 appear
                 mountOnEnter
                 unmountOnExit
-                timeout={200}
+                timeout={1}
                 classNames={'popin-component-appear-animation'}
             >
                 <div className={'popin-component'}>
@@ -29,12 +29,12 @@ class PopinComponent extends React.Component{
                         appear
                         mountOnEnter
                         unmountOnExit
-                        timeout={200}
-                        classNames={'popin-bg-appear-animation'}
-                    >
+                        timeout={10}
+                        classNames={'popin-bg-appear-animation'}>
                         <div
                             onClick={e => this.props.onClick(e)}
-                            className="popin-component-bg"/>
+                            className="popin-component-bg"
+                        />
                     </CSSTransition>
 
                     <CSSTransition
