@@ -1,11 +1,22 @@
 .popin-component{
-  position: fixed;
 
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
+  .popin-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .page-content{
+    will-change: filter;
+    &.blur-wrapper{
+      transition: filter 500ms;
+      filter: blur(0);
+      &.blured{
+        filter: blur(3px);
+      }
+    }
+  }
 
   .popin-component-bg{
     width: 100%;

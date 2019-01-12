@@ -5,17 +5,17 @@
   overflow-y: scroll;
   overflow-x: hidden;
 
-  .blur-wrapper{
-    transition: filter 500ms;
-    filter: blur(0);
-    will-change: filter;
-    &.blured{
-      filter: blur(3px);
-    }
-  }
+  //.blur-wrapper{
+  //  transition: filter 500ms;
+  //  filter: blur(0);
+  //  will-change: filter;
+  //  &.blured{
+  //    filter: blur(3px);
+  //  }
+  //}
 
 
-  .download-button-wrapper{
+   .download-button-wrapper{
     text-align: center;
     .download-button{
       //cursor: pointer;
@@ -49,8 +49,9 @@
         font-size: 2rem;
         border-radius: 5px;
         border: none;
-        border: 1px solid #b4b4b4;
+        border: 1px solid #d6d6d6;
         margin: 25px;
+        box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.12);
       }
     }
     .send-button-wrapper{
