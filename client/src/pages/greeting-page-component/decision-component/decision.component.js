@@ -14,12 +14,12 @@ const DecisionComponent = (props) => {
 		>
 			<div className={'decision-component'}>
 				<div className={'decision-wrapper'} onClick={()=>props.onClick()}>
-					<span className={'option yes'} role={'img'}>👍</span>
+					<span className={'option yes'} role={'img'} aria-label={'thumbs-up'}>👍</span>
 					<br/>
 					<span className={'word'}>(sure)</span>
 				</div>
 				<div className={'decision-wrapper'}>
-					<span className={'option no'} role={'img'} >👎</span>
+					<span className={'option no'} role={'img'} aria-label={'thumbs-down'}>👎</span>
 					<br/>
 					<span className={'word'}>(naah)</span>
 				</div>
