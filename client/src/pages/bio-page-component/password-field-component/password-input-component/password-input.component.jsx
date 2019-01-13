@@ -21,12 +21,14 @@ class PasswordInputComponent extends Component {
 	
 	render() {
 		return (
-			<input
-				className={['number-input', this.props.value !== '' ? 'with-border': ''].join(' ')}
-				value={this.props.value}
-				type="number"
-				onChange={e => this.setValue(e)}
-			/>
+			<div className={'password-input-component'}>
+				<input
+					className={['number-input', this.props.value !== '' ? 'with-border': ''].join(' ')}
+					value={this.props.value}
+					type="number"
+					onChange={e => this.setValue(e)}
+				/>
+			</div>
 		);
 	}
 }

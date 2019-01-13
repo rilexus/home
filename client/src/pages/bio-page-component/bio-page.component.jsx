@@ -1,6 +1,6 @@
 import React from 'react';
 import './bio-page-component.style.scss';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 import HeaderComponent from "../../shared/components/page-header-component/header.component";
 import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
 import PageTitleComponent from "../../shared/components/page-title-component/page-title.component";

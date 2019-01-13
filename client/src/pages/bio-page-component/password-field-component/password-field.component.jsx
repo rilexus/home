@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './password-field-component.style.scss';
 import PasswordInputComponent from "./password-input-component/password-input.component";
-import PopupComponent from "../../../shared/components/popup-component/popup.component";
+// import PopupComponent from "../../../shared/components/popup-component/popup.component";
 
 
 

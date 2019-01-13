@@ -1,3 +1,7 @@
+@import "../../../style/utils/vars";
+
+
+
 .popin-component{
 
   .popin-wrapper{
@@ -53,7 +57,7 @@
     transform-origin: 50% 50%;
     width: 50%;
     height: 50%;
-    padding: 50px;
+    padding: 5vw;
     background-color: white;
     top: 50%;
     left: 50%;
@@ -67,28 +71,122 @@
     will-change: opacity, transform;
     border-radius: 10px;
 
-    &.popin-appear-animation{
-      &-enter{
-        &-active{
-          opacity: 1;
-          transform: scale(1) translate(-50%, -40%);
-        }
-        &-done{
-          opacity: 1;
-          transform: scale(1) translate(-50%, -40%);
-        }
-      }
-      &-exit{
-        &-active{
-          opacity: 0;
-          transform: scale(1) translate(-50%, -40%);
-        }
+    @media screen and (min-width: $iphone5) and (max-width: $iphone-plus){
+      width: 79%;
+      height: 68%;
 
-        &-done{
-          opacity: 0;
-          transform: scale(1) translate(-50%, -40%);
+      &.popin-appear-animation{
+        &-enter{
+          &-active{
+            opacity: 1;
+            transform: scale(1) translate(-50%, -55%);
+          }
+          &-done{
+            opacity: 1;
+            transform: scale(1) translate(-50%, -55%);
+          }
+        }
+        &-exit{
+          &-active{
+            opacity: 0;
+            transform: scale(1) translate(-50%, -55%);
+          }
+
+          &-done{
+            opacity: 0;
+            transform: scale(1) translate(-50%, -55%);
+          }
         }
       }
     }
+
+    @media screen and (min-width: 415px) and (max-width: 768px){
+      width: 71vw;
+      height: 38vh;
+
+      &.popin-appear-animation{
+        &-enter{
+          &-active{
+            opacity: 1;
+            transform: scale(1) translate(-50%, -55%);
+          }
+          &-done{
+            opacity: 1;
+            transform: scale(1) translate(-50%, -55%);
+          }
+        }
+        &-exit{
+          &-active{
+            opacity: 0;
+            transform: scale(1) translate(-50%, -55%);
+          }
+
+          &-done{
+            opacity: 0;
+            transform: scale(1) translate(-50%, -55%);
+          }
+        }
+      }
+    }
+
+
+    @media screen and (min-width: $ipad) and (max-width: $ipad-pro){
+      width: 68vw;
+      height: 38vh;
+
+      &.popin-appear-animation{
+        &-enter{
+          &-active{
+            opacity: 1;
+            transform: scale(1) translate(-50%, -55%);
+          }
+          &-done{
+            opacity: 1;
+            transform: scale(1) translate(-50%, -55%);
+          }
+        }
+        &-exit{
+          &-active{
+            opacity: 0;
+            transform: scale(1) translate(-50%, -55%);
+          }
+
+          &-done{
+            opacity: 0;
+            transform: scale(1) translate(-50%, -55%);
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: $ipad-pro + 10){
+      width: 24vw;
+      height: 45vh;
+
+      &.popin-appear-animation{
+        &-enter{
+          &-active{
+            opacity: 1;
+            transform: scale(1) translate(-50%, -60%);
+          }
+          &-done{
+            opacity: 1;
+            transform: scale(1) translate(-50%, -60%);
+          }
+        }
+        &-exit{
+          &-active{
+            opacity: 0;
+            transform: scale(1) translate(-50%, -40%);
+          }
+
+          &-done{
+            opacity: 0;
+            transform: scale(1) translate(-50%, -40%);
+          }
+        }
+      }
+    }
+
   }
 }

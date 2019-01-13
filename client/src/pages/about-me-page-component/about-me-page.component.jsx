@@ -72,7 +72,7 @@ class AboutMePageComponent extends React.Component {
 								</div>
 								
 								<div className="text-container">
-									<h3>I l<span className={'icon'}>❤️</span>️ve creating things</h3>
+									<h3>I l<span className={'icon'} role={'img'}>❤️</span>️ve creating things</h3>
 									<p>
 										I love creating UI’s.
 										My whole life revolves around code and UI’s.

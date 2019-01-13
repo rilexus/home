@@ -1,6 +1,6 @@
 import React from 'react';
 import './interested.style.scss';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 
 

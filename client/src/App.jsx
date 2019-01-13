@@ -13,7 +13,7 @@ import StartPageComponent from "./pages/start-page-component/start-page.componen
 import GreetingComponent from "./pages/greeting-page-component/greeting.component";
 
 import {Switch} from "react-router-dom";
-import SlideshowPageComponent from "./pages/slideshow-page-component/slideshow-page.component";
+// import SlideshowPageComponent from "./pages/slideshow-page-component/slideshow-page.component";
 
 
 

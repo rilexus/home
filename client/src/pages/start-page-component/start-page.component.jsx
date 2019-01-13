@@ -9,8 +9,8 @@ import * as uuid from "uuid";
 import {CSSTransition} from "react-transition-group";
 import FadeinAnimationComponent from "../../shared/animations/fadein-animation/fadein-animation.component";
 import {getWindowHeight} from "../../shared/utils";
-import HelloThereComponent from "./hello-there-component.jsx/hello-there.component";
-import SlideupAnimationComponent from "../../shared/animations/slideup-animation/slideup-animation.component";
+// import HelloThereComponent from "./hello-there-component.jsx/hello-there.component";
+// import SlideupAnimationComponent from "../../shared/animations/slideup-animation/slideup-animation.component";
 
 
 
