@@ -26,6 +26,7 @@
 
     opacity: 0;
     transition: opacity 400ms;
+    will-change: opacity;
     &.popin-bg-appear-animation{
       &-enter{
         &-active{

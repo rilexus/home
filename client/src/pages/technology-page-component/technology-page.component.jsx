@@ -160,11 +160,11 @@ export class TechnologyPageComponent extends React.Component {
 
 				<PopupComponent
 					visible={this.state.showPopup}
-					top={this.state.popupPosition.top}
-					left={this.state.popupPosition.left}
+					topPos={this.state.popupPosition.top}
+					leftPos={this.state.popupPosition.left}
 					text={this.state.popupText}
 					subtext={this.state.popupSubtext}
-					fromTop
+					showTop={true}
 				/>
 				<CSSTransition
 					in

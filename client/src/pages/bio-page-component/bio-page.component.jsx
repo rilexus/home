@@ -8,6 +8,7 @@ import PopinComponent from "../../shared/components/popin-component/popin.compon
 import LockIconComponent from "../../shared/icons/lock-icon.component";
 import FadeinAnimationComponent from "../../shared/animations/fadein-animation/fadein-animation.component";
 import SlideupAnimationComponent from "../../shared/animations/slideup-animation/slideup-animation.component";
+import PasswordFieldComponent from "./password-field-component/password-field.component";
 
 
 export class BioPageComponent extends React.Component{
@@ -51,21 +52,7 @@ export class BioPageComponent extends React.Component{
     getPopinContent(){
 		return (
 			<div className="password-wrapper">
-				<div className={'center'}>
-					<h2>Password required!</h2>
-					<p>please enter the provided password</p>
-				</div>
-				<div className="password-field">
-					<input className={'number-input'} type="number"/>
-					<input className={'number-input'} type="number"/>
-					<input className={'number-input'} type="number"/>
-					<input className={'number-input'} type="number"/>
-				</div>
-				<div className="send-button-wrapper">
-					<button onClick={(e)=>this.closePopin(e)}>
-						Download
-					</button>
-				</div>
+				<PasswordFieldComponent/>
 			</div>
 		);
     }
@@ -76,7 +63,11 @@ export class BioPageComponent extends React.Component{
 				<PopinComponent
 					in_={this.state.openPopin}
 					onClick={(e)=>this.closePopin(e)}
-					popinContent={()=>this.getPopinContent()}>
+					popinContent={()=>(
+						<div className="password-wrapper">
+							<PasswordFieldComponent onClose={(e)=> this.closePopin(e)}/>
+						</div>
+					)}>
 					<div>
 						<HeaderComponent/>
 						<PageTitleComponent title={this.props.title} comment={''}/>
