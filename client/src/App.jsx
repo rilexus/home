@@ -70,16 +70,16 @@ export const pages = [
         comment: 'BRIEFLY ABOUT MY LIFE',
         imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif',
     },
-    {
-        id: uuid(),
-        PageComponent: SlideshowPageComponent,
-	    
-        url: '/slideshow',
-        title: 'Slideshow',
-	    comment: '',
-	    subtitle: 'Slide',
-	    imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'
-    },
+    // {
+    //     id: uuid(),
+    //     PageComponent: SlideshowPageComponent,
+	//
+    //     url: '/slideshow',
+    //     title: 'Slideshow',
+	//     comment: '',
+	//     subtitle: 'Slide',
+	//     imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'
+    // },
 ];
 
 
