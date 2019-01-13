@@ -125,7 +125,8 @@ class PasswordFieldComponent extends Component {
 						{/*leftPos={this.getPopupPos().left}*/}
 						{/*text={'Please enter the password'} />*/}
 					<button
-						disabled={!this.inputValid()}
+						//disabled={!this.inputValid()}
+						disabled
 						onClick={(e)=>this.closePopin(e)}
 						onMouseEnter={(e) => this.showPopup(e)}
 						onMouseLeave={(e) => this.hidePopUp(e)}
