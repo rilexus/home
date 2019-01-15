@@ -8,7 +8,6 @@ import PageTitleComponent from "../../shared/components/page-title-component/pag
 import HeaderComponent from "../../shared/components/page-header-component/header.component";
 import UnfoldComponent from "./unfold-component/unfold.component";
 import PageSubtitleComponent from "../../shared/components/page-subtitle-component/page-subtitle.component";
-import Wth3DEffect from "../../3DEffect/With3DEffect";
 import PopupComponent from "../../shared/components/popup-component/popup.component";
 import PageContentWrapperComponent
 	from "../../shared/components/page-content-wrapper-component/page-content-wrapper.component";
@@ -160,11 +159,11 @@ export class TechnologyPageComponent extends React.Component {
 
 				<PopupComponent
 					visible={this.state.showPopup}
-					top={this.state.popupPosition.top}
-					left={this.state.popupPosition.left}
+					topPos={this.state.popupPosition.top}
+					leftPos={this.state.popupPosition.left}
 					text={this.state.popupText}
 					subtext={this.state.popupSubtext}
-					fromTop
+					showTop={true}
 				/>
 				<CSSTransition
 					in

@@ -1,12 +1,7 @@
 import React from 'react';
 import './over-view-page-component.style.scss';
 import { CSSTransition, TransitionGroup} from 'react-transition-group';
-import uuid from 'uuid';
-import {TechnologyPageComponent} from "../technology-page-component/technology-page.component";
-import ContactPageComponent from "../contact-page-component/contact-page.component";
-import {BioComponent} from "../bio-page-component/bio.component";
 import {withRouter} from "react-router-dom";
-import StartPageComponent from "../start-page-component/start-page.component";
 import PopupComponent from "../../shared/components/popup-component/popup.component";
 import HeaderComponent from "../../shared/components/page-header-component/header.component";
 import PageTitleComponent from "../../shared/components/page-title-component/page-title.component";
@@ -180,23 +175,21 @@ class OverViewPageComponent extends React.Component{
                             <TransitionGroup>
                                 {
                                     this.state.views.map(({title, hovered, id}) => {
-                                        if(hovered){
-	                                        return(
-		                                        <CSSTransition
-			                                        key={id}
-			                                        in
-			                                        appear
-			                                        mountOnEnter
-			                                        unmountOnExit
-			                                        timeout={800}
-			                                        classNames={'title-animation'}
-		                                        >
-			                                        <div className="title">
-				                                        {this.state.title}
-			                                        </div>
-		                                        </CSSTransition>
-	                                        )
-                                        }
+                                        return hovered ?
+	                                        <CSSTransition
+		                                        key={id}
+		                                        in
+		                                        appear
+		                                        mountOnEnter
+		                                        unmountOnExit
+		                                        timeout={800}
+		                                        classNames={'title-animation'}
+	                                        >
+		                                        <div className="title">
+			                                        {this.state.title}
+		                                        </div>
+	                                        </CSSTransition>
+	                                        : ''
                                     })
                                 }
                             </TransitionGroup>

@@ -5,26 +5,20 @@ import {lurkerFace} from "./shared/utils";
 import OverViewPageComponent from "./pages/over-view-page-component/over-view-page.component";
 import FullViewComponent from "./full-view-component/full-view.component";
 import AboutMePageComponent from "./pages/about-me-page-component/about-me-page.component";
-import {BioComponent} from "./pages/bio-page-component/bio.component";
+import {BioPageComponent} from "./pages/bio-page-component/bio-page.component";
 import {TechnologyPageComponent} from "./pages/technology-page-component/technology-page.component";
 import ContactPageComponent from "./pages/contact-page-component/contact-page.component";
 import * as uuid from "uuid";
 import StartPageComponent from "./pages/start-page-component/start-page.component";
 import GreetingComponent from "./pages/greeting-page-component/greeting.component";
-import CookieBannerComponent from "./shared/components/cookie-banner-component/cookie-banner.component";
+
 import {Switch} from "react-router-dom";
-import SlideshowPageComponent from "./pages/slideshow-page-component/slideshow-page.component";
-import PageSubtitleComponent from "./shared/components/page-subtitle-component/page-subtitle.component";
+// import SlideshowPageComponent from "./pages/slideshow-page-component/slideshow-page.component";
+
 
 
 
 export const pages = [
-    // {
-    //     url: '/',
-    //     title: 'Greeting',
-    //     id: uuid(),
-    //     PageComponent: GreetingComponent,
-    // },
     {
         id: uuid(),
         PageComponent: StartPageComponent,
@@ -35,12 +29,7 @@ export const pages = [
 	    imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif',
 	    comment: 'WITH PASSION FOR DESIGN',
     },
-    // {
-    //     url: '/bio',
-    //     title: 'Bio',
-    //     id: uuid(),
-    //     PageComponent: BioComponent,
-    // },
+
     {
         id: uuid(),
         PageComponent: TechnologyPageComponent,
@@ -73,14 +62,24 @@ export const pages = [
     },
     {
         id: uuid(),
-        PageComponent: SlideshowPageComponent,
-	    
-        url: '/slideshow',
-        title: 'Slideshow',
-	    comment: '',
-	    subtitle: 'Slide',
-	    imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'
+        PageComponent: BioPageComponent,
+
+        url: '/bio',
+        title: 'Bio',
+        subtitle:'BIO',
+        comment: 'BRIEFLY ABOUT MY LIFE',
+        imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif',
     },
+    // {
+    //     id: uuid(),
+    //     PageComponent: SlideshowPageComponent,
+	//
+    //     url: '/slideshow',
+    //     title: 'Slideshow',
+	//     comment: '',
+	//     subtitle: 'Slide',
+	//     imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif'
+    // },
 ];
 
 
