@@ -131,8 +131,11 @@
 
 
     @media screen and (min-width: $ipad) and (max-width: $ipad-pro){
-      width: 68vw;
-      height: 38vh;
+      //width: 68vw;
+      //height: 38vh;
+
+      width: 57vw;
+      height: 58vh;
 
       &.popin-appear-animation{
         &-enter{
@@ -159,8 +162,8 @@
       }
     }
 
-    @media screen and (min-width: $ipad-pro + 10){
-      width: 24vw;
+    @media screen and (min-width: $ipad-pro){
+      width: 41vw;
       height: 45vh;
 
       &.popin-appear-animation{
