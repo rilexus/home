@@ -23,7 +23,7 @@ export const pages = [
         id: uuid(),
         PageComponent: StartPageComponent,
 	    
-        url: '/start',
+        url: '/',
         title: 'Start',
 	    subtitle: 'UX&UI',
 	    imgUrl: 'https://media.giphy.com/media/3o6ZtrcBDLanIMbdRe/source.gif',
@@ -106,7 +106,6 @@ class App extends Component {
 	  ).then(res => {
 	      if(res){
 	          const resp = res;
-              console.log(resp)
               return res;
               //return rep.json()
           }else {
@@ -120,15 +119,15 @@ class App extends Component {
     return (
         <div className='App'>
 	        <Switch>
-		        <Route
-			        path={'/'}
-			        exact
-			        render={()=>(
-				        <FullViewComponent>
-					        <GreetingComponent/>
-				        </FullViewComponent>
-			        )}
-		        />
+		        {/*<Route*/}
+			        {/*path={'/'}*/}
+			        {/*exact*/}
+			        {/*render={()=>(*/}
+				        {/*<FullViewComponent>*/}
+					        {/*<GreetingComponent/>*/}
+				        {/*</FullViewComponent>*/}
+			        {/*)}*/}
+		        {/*/>*/}
 		
 		        {
 			        pages.map((page) => {
@@ -151,7 +150,7 @@ class App extends Component {
 				        );
 			        })
 		        }
-		        <Redirect to="/start" />
+		        <Redirect to="/" />
 	        </Switch>
 
 

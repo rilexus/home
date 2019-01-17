@@ -38,7 +38,7 @@ class AboutMePageComponent extends React.Component {
 						<section>
 							<div className="wrapper">
 								<div className="text-container center">
-									<h1>Hello, I’m Stanislav</h1>
+									<h2>Hello, I’m Stanislav</h2>
 									<p>
 										I’m a frontend developer,
 										<strong>

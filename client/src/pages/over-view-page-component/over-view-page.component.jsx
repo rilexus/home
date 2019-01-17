@@ -236,7 +236,7 @@ class OverViewPageComponent extends React.Component{
 													<div className="view-content">
 														{/*<PageComponent/>*/}
 														<div>
-															<HeaderComponent/>
+															{/*<HeaderComponent/>*/}
 															<PageTitleComponent title={title} comment={''}/>
 															<PageSubtitleComponent
 																subtitle={subtitle}
