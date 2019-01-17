@@ -4,6 +4,7 @@
 .start-page-component {
   overflow-y: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   height: 100%;
   width: 100%;
 
