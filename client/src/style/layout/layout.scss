@@ -5,6 +5,25 @@
   width: 60%;
   display: block;
 
+  @media screen and (min-width: $iphone5) and (max-width: $iphone6-7-8){ // iphone 5
+    width: 95%;
+  }
+  @media screen and (min-width: $iphone6-7-8) and (max-width: $iphone-plus) { // iphone 6/7/8
+    width: 95%;
+  }
+  @media screen and (min-width: $iphone-plus) and  (max-width: $ipad){ // iphone plus
+    width: 80%;
+  }
+  @media screen and  (min-width: $ipad) and (max-width: $ipad-pro){ // ipad
+    width: 76%;
+  }
+  @media screen and (min-width: $ipad-pro){ // ipad pro
+    max-width: 66%;
+  }
+  @media only screen and (min-width: 1200px) { // 1200 and ⬆︎
+    max-width: 60%;
+  }
+
   margin: {
     left: auto;
     right: auto;
