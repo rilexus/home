@@ -17,17 +17,19 @@ const HeaderComponent = (props) => {
 			classNames={'header-component-animation'}
 		>
 			<header className={'header-component'}>
-				<Link to={'/start'}>Stanislav</Link>
-				<div className={'links-wrapper'}>
-					{
-                        [...pages].map(({title, id, url}, idx) => {
-                            return(
-                                <HeaderLinkComponent
-                                    key={`page_link${id}_${idx}`}
-                                    to={url} text={title}/>
-                            );
-                        })
-                    }
+				<div className="header-component__content">
+					<Link to={'/start'}>Stanislav</Link>
+					<div className={'links-wrapper'}>
+						{
+							[...pages].map(({title, id, url}, idx) => {
+								return(
+									<HeaderLinkComponent
+										key={`page_link${id}_${idx}`}
+										to={url} text={title}/>
+								);
+							})
+						}
+					</div>
 				</div>
 			</header>
 		</CSSTransition>

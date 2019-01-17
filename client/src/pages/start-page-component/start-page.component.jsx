@@ -122,7 +122,6 @@ class StartPageComponent_ extends React.Component {
 		return (
 			<div className={'start-page-component'} onScroll={(e) => this.handleScroll(e.target.scrollTop)}>
 				<HeaderComponent/>
-				
 				<section className={'start-page-component-subtitle'}>
 					<PageTitleComponent title={this.props.title} comment={''}/>
 					<FadeinAnimationComponent duration={1000} timeout={200} _in={this.state.subtitle}>
@@ -205,8 +204,6 @@ class StartPageComponent_ extends React.Component {
 						</div>
 					</div>
 				</section>
-			
-			
 			</div>
 		)
 	}

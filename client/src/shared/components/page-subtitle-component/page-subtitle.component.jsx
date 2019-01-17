@@ -15,14 +15,14 @@ const PageSubtitleComponent = ({subtitle, comment, url, shrink}) => {
 					classNames={'appear-grow'}
 				>
 					<div className="subtitle-wrapper">
-						<div style={{
+						<h1 style={{
 							backgroundImage: `url("${url}")`,
 							backgroundColor: url? 'transparent' : 'black'
 						}}
 						     className={['section-title'].join(' ')}
 						     id={'page-subtitle'}>
 							{subtitle}
-						</div>
+						</h1>
 						<div className="section-subtitle">
 							{comment}
 						</div>
