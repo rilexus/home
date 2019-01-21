@@ -166,24 +166,24 @@ class StartPageComponent_ extends React.Component {
 					</div>
 				</section>
 				
-				<hr/>
+				{/*<hr/>*/}
 				
-				<section className={'recent-work-section'}>
-					<div className="wrapper">
-						<div className={'recent-works'}>
-							<h4>
-								RECENT WORK
-							</h4>
-							<div className="text-container">
-								<p className={'no-proj'}>
-									NO PUBLIC PROJECTS YET
-								</p>
-							</div>
-						</div>
-					</div>
-				</section>
+				{/*<section className={'recent-work-section'}>*/}
+					{/*<div className="wrapper">*/}
+						{/*<div className={'recent-works'}>*/}
+							{/*<h4>*/}
+								{/*RECENT WORK*/}
+							{/*</h4>*/}
+							{/*<div className="text-container">*/}
+								{/*<p className={'no-proj'}>*/}
+									{/*NO PUBLIC PROJECTS YET*/}
+								{/*</p>*/}
+							{/*</div>*/}
+						{/*</div>*/}
+					{/*</div>*/}
+				{/*</section>*/}
 				
-				<hr/>
+				{/*<hr/>*/}
 				
 				
 				<section className={'about-me grey-bg'}>
