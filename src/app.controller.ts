@@ -8,14 +8,14 @@ export class AppController {
 
   @Get()
   root(@Res() res){
-	  //res.sendFile(path.resolve('build/index.html'));
-	  //res.sendFile("index.html");
+    Logger.log('serve index.html','AppController');
+    console.log('AppController main url')
 	  res.sendFile(__dirname + '/index.html');
   }
 	
 	@Get('/test')
 	async test(){
-  	Logger.log('reached','AppController');
+  	Logger.log('reached','CvController');
 		return {data: true};
 	}
 }

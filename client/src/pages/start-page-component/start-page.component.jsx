@@ -124,6 +124,7 @@ class StartPageComponent_ extends React.Component {
 				<HeaderComponent/>
 				<section className={'start-page-component-subtitle'}>
 					<PageTitleComponent title={this.props.title} comment={''}/>
+
 					<FadeinAnimationComponent duration={1000} timeout={200} _in={this.state.subtitle}>
 						<PageSubtitleComponent
 							subtitle={this.props.subtitle}
@@ -131,6 +132,7 @@ class StartPageComponent_ extends React.Component {
 							comment={this.props.comment}
 						/>
 					</FadeinAnimationComponent>
+
 				</section>
 				<section>
 					<ScrollDownIconComponent fade={!this.state.mouseVisible}/>

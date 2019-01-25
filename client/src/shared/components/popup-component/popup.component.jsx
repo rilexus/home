@@ -5,6 +5,7 @@ import {CSSTransition} from "react-transition-group";
 
 const PopupComponent = ({visible, topPos, leftPos, text, subtext, showTop, classNames}) => {
 	return(
+
 		<CSSTransition
 			in={visible}
 			appear
@@ -29,7 +30,6 @@ const PopupComponent = ({visible, topPos, leftPos, text, subtext, showTop, class
 								{subtext}
 							</div>
 							: null
-							
 					}
 				</div>
 				{
