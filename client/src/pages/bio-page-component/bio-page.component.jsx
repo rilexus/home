@@ -57,6 +57,10 @@ export class BioPageComponent extends React.Component{
 		);
     }
 
+    handlePasswordChange(value){
+		console.log(value);
+	}
+
 	render() {
 		return (
 			<div className={'bio-page-component'}>
@@ -65,7 +69,9 @@ export class BioPageComponent extends React.Component{
 					onClick={(e)=>this.closePopin(e)}
 					popinContent={()=>(
 						<div className="password-wrapper">
-							<PasswordFieldComponent onClose={(e)=> this.closePopin(e)}/>
+							<PasswordFieldComponent
+								onChange={(value) => this.handlePasswordChange(value)}
+								onClose={(e)=> this.closePopin(e)}/>
 						</div>
 					)}>
 					<div>

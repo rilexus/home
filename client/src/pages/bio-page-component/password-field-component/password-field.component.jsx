@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './password-field-component.style.scss';
 import PasswordInputComponent from "./password-input-component/password-input.component";
+import {SERVER} from "../../../dotenv";
+
 // import PopupComponent from "../../../shared/components/popup-component/popup.component";
 
 
@@ -36,13 +38,37 @@ class PasswordFieldComponent extends Component {
 	};
 	
 	inputValid(){
-		const inputsValues = this.getInputs().map(({value})=> value);
-		return !inputsValues.includes('');
+		return this.getParsedValue().length === 4;
 	}
+
 	getPopupPos(){
 		return {...this.state.popup.pos};
 	}
-	
+
+	requestDownload(){
+		if(this.inputValid()) {
+            fetch(`http://localhost:3000/cv/download`, {
+                method: 'POST',
+				headers: {
+                    'Content-Type': 'application/json',
+                    // 'Accept-Encoding': 'gzip',
+                    'Accept': 'application/json',
+				},
+                body: JSON.stringify({query: this.getParsedValue()})
+            })
+                .then(res => res.json())
+				.then(res => {
+					console.log(res);
+					this.closePopin({})
+				})
+                .catch(err => console.error(err));
+        }
+	}
+
+	getParsedValue(){
+		const value = this.state.inputs.map(v =>v.value).join('');
+		return value;
+	}
 	
 	setValue(value, idx){
 		const newValues = this.getInputs();
@@ -50,7 +76,9 @@ class PasswordFieldComponent extends Component {
 		this.setState(s=> ({
 			...s,
 			inputs: newValues
-		}))
+		}));
+		const v = newValues.map(v => v.value);
+		this.props.onChange(v.join(''));
 	}
 	
 	getInputs(){
@@ -125,9 +153,8 @@ class PasswordFieldComponent extends Component {
 						{/*leftPos={this.getPopupPos().left}*/}
 						{/*text={'Please enter the password'} />*/}
 					<button
-						//disabled={!this.inputValid()}
-						disabled
-						onClick={(e)=>this.closePopin(e)}
+						disabled={!this.inputValid()}
+						onClick={(e)=>this.requestDownload()}
 						onMouseEnter={(e) => this.showPopup(e)}
 						onMouseLeave={(e) => this.hidePopUp(e)}
 					>

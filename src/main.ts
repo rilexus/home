@@ -15,7 +15,6 @@ async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 	
 	const url = path.resolve(`client/build`);
-	console.log(url)
 	app.useStaticAssets(url);
 	
 	if (module.hot) {
@@ -29,8 +28,6 @@ async function bootstrap() {
 	
 	app.useGlobalFilters(new NotFoundExceptionFilter()); // catch 404 and return index.html
 	await app.listen(port);
-	
-	
 	
 }
 bootstrap();
