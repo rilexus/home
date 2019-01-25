@@ -48,8 +48,6 @@ class PasswordFieldComponent extends Component {
 	
 	requestDownload(){
 		if(this.inputValid()) {
-			// console.log(process.env.NODE_ENV);
-			// console.log(process.env.REACT_APP_DEVELOPMENT_SERVER_ADDRESS);
             fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/cv/download`, {
                 method: 'POST',
 				headers: {
@@ -109,7 +107,6 @@ class PasswordFieldComponent extends Component {
 	showPopup(e){
 		const top = e.target.getBoundingClientRect().top - 60;
 		const left = e.target.getBoundingClientRect().left + 25;
-		console.log(e.target.getBoundingClientRect());
 		this.setState(s => ({
 			...s,
 			popup: {
@@ -123,7 +120,6 @@ class PasswordFieldComponent extends Component {
 		}))
 	}
 	hidePopUp(e){
-		console.log('hier');
 		this.setState(s => ({
 			...s,
 			popup: {
