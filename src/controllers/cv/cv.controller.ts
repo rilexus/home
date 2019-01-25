@@ -5,7 +5,7 @@ import {resolve} from "path";
 
 @Controller('cv')
 export class CvController {
-  constructor(private readonly appService: CvService) {}
+  constructor(private readonly cvService: CvService) {}
 
   @Get()
   root(@Res() res){
@@ -15,7 +15,19 @@ export class CvController {
 	@Post('/download')
 	async download(@Body('query') query: any, @Res() res){
   	Logger.log('reached','CvController');
-  	console.log(__dirname + 'client/build/documents/Lebenslauf.pdf');
-		res.sendFile(__dirname + '../documents/Lebenslauf.pdf');
+  	
+  	const valid = await this.cvService.checkPassword(query);
+  	console.log(valid);
+  	
+  	if (valid){
+  		res.setHeader("Content-Disposition", ["attachment", "filename=Lebenslauf.pdf"]);
+		  // res.setHeader("Content-Type", 'application/pdf');
+		  res.setHeader("Content-Type", 'application/octet-stream');
+			res.download(resolve('client/build/documents/Lebenslauf.pdf'));
+	  } else {
+		  res.status(403);
+		  res.send();
+	  }
+		
 	}
 }

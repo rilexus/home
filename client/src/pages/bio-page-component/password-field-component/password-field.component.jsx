@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import './password-field-component.style.scss';
 import PasswordInputComponent from "./password-input-component/password-input.component";
-import {SERVER} from "../../../dotenv";
-
-// import PopupComponent from "../../../shared/components/popup-component/popup.component";
-
+// import {getServerURL} from "../../../utils";
 
 
 class PasswordFieldComponent extends Component {
 	
 	state = {
+		error: false,
 		inputs: [
 			{
 				value:'',
@@ -44,24 +42,36 @@ class PasswordFieldComponent extends Component {
 	getPopupPos(){
 		return {...this.state.popup.pos};
 	}
-
+	
+	
+	
+	
 	requestDownload(){
 		if(this.inputValid()) {
-            fetch(`http://localhost:3000/cv/download`, {
+			// console.log(process.env.NODE_ENV);
+			// console.log(process.env.REACT_APP_DEVELOPMENT_SERVER_ADDRESS);
+            fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/cv/download`, {
                 method: 'POST',
 				headers: {
                     'Content-Type': 'application/json',
-                    // 'Accept-Encoding': 'gzip',
                     'Accept': 'application/json',
 				},
                 body: JSON.stringify({query: this.getParsedValue()})
-            })
-                .then(res => res.json())
-				.then(res => {
-					console.log(res);
-					this.closePopin({})
-				})
-                .catch(err => console.error(err));
+            }).then(res => {
+	            	if(res.status === 200) {
+			            return res.blob()
+		            } else {
+			            this.setError();
+		            }
+            }).then(blob => {
+            	const a = this.linkRef.current;
+            	const url = window.URL.createObjectURL(blob);
+            	a.download = 'Lebenslauf.pdf';
+            	a.href = url;
+            	a.click();
+            	a.href = '';
+            	this.closePopin({});
+            }).catch(err => console.error(err));
         }
 	}
 
@@ -123,6 +133,24 @@ class PasswordFieldComponent extends Component {
 		}))
 	}
 	
+	setError(){
+		this.setState(s => ({
+			...s,
+			error: true,
+			inputs: s.inputs.map((inp, idx) => ({
+				...s.inputs[idx],
+				value: ''
+			}))
+		}))
+	}
+	
+	
+	
+	
+	
+	
+	linkRef = React.createRef();
+	
 	render() {
 		return (
 			<div className={'password-field-component'}>
@@ -137,6 +165,7 @@ class PasswordFieldComponent extends Component {
 								<PasswordInputComponent
 									key={`password-input-${idx}`}
 									value={value}
+									error={this.state.error}
 									idx={idx}
 									onChange={(value, idx) => this.setValue(value, idx)}
 								/>
@@ -146,12 +175,7 @@ class PasswordFieldComponent extends Component {
 					
 				</div>
 				<div className="send-button-wrapper">
-					{/*<PopupComponent*/}
-						{/*showTop={true}*/}
-						{/*visible={this.popupVisible()}*/}
-						{/*topPos={this.getPopupPos().top}*/}
-						{/*leftPos={this.getPopupPos().left}*/}
-						{/*text={'Please enter the password'} />*/}
+					
 					<button
 						disabled={!this.inputValid()}
 						onClick={(e)=>this.requestDownload()}
@@ -160,6 +184,7 @@ class PasswordFieldComponent extends Component {
 					>
 						Download
 					</button>
+					<a ref={this.linkRef}/>
 				</div>
 			</div>
 		);
