@@ -96,24 +96,24 @@ class App extends Component {
   
   componentDidMount() {
   	
-  	console.log(process.env.NODE_ENV);
-  	console.log(process.env.REACT_APP_DEVELOPMENT_SERVER_ADDRESS);
-	  
+  	// console.log(process.env.NODE_ENV);
+  	// console.log(process.env.REACT_APP_DEVELOPMENT_SERVER_ADDRESS);
+	  //
 	  console.log(lurkerFace());
 	  console.log(
 	      "%cSTOP LURKING! NOTHING TO SEE HERE!",
           "color: red; font-size: x-large"
       );
-	  fetch(
-	  	'http://localhost:3000/test'
-	  ).then(res => {
-	      if(res){
-              return res.json();
-          }else {
-	          return {error: 'no response'}
-          }
-	  }).then(res => console.log(res))
-        .catch((er) => console.error(er))
+	  // fetch(
+	  // 	'http://localhost:3000/test'
+	  // ).then(res => {
+	  //     if(res){
+      //         return res.json();
+      //     }else {
+	  //         return {error: 'no response'}
+      //     }
+	  // }).then(res => console.log(res))
+      //   .catch((er) => console.error(er))
   }
 
   render() {

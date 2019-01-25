@@ -58,7 +58,7 @@ export class BioPageComponent extends React.Component{
     }
 
     handlePasswordChange(value){
-		console.log(value);
+		
 	}
 
 	render() {

@@ -47,6 +47,7 @@ class PasswordFieldComponent extends Component {
 	
 	
 	requestDownload(){
+		let status;
 		if(this.inputValid()) {
             fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/cv/download`, {
                 method: 'POST',
@@ -56,19 +57,21 @@ class PasswordFieldComponent extends Component {
 				},
                 body: JSON.stringify({query: this.getParsedValue()})
             }).then(res => {
-	            	if(res.status === 200) {
-			            return res.blob()
-		            } else {
-			            this.setError();
-		            }
-            }).then(blob => {
-            	const a = this.linkRef.current;
-            	const url = window.URL.createObjectURL(blob);
-            	a.download = 'Lebenslauf.pdf';
-            	a.href = url;
-            	a.click();
-            	a.href = '';
-            	this.closePopin({});
+            	status = res.status;
+            	if(status === 200) {
+            		res.blob()
+			            .then(blob => {
+				            const a = this.linkRef.current;
+				            const url = window.URL.createObjectURL(blob);
+				            a.download = 'Lebenslauf.pdf';
+				            a.href = url;
+				            a.click();
+				            a.href = '';
+				            this.closePopin({});
+			            }).catch(err => console.error(err));
+            	} else {
+            		this.setError();
+            	}
             }).catch(err => console.error(err));
         }
 	}
